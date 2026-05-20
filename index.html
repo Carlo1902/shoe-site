@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker Vault</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f0f0f;
+  color:white;
+}
+
+header{
+  background:black;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#f5c542;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+}
+
+.hero{
+  height:70vh;
+  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600')
+  center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:70px;
+  margin-bottom:20px;
+  background:rgba(0,0,0,0.5);
+  padding:10px 20px;
+}
+
+.hero p{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.btn{
+  background:#f5c542;
+  color:black;
+  padding:15px 35px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.products{
+  padding:60px 40px;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#1b1b1b;
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.price{
+  color:#f5c542;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.buy-btn{
+  display:inline-block;
+  background:#f5c542;
+  color:black;
+  padding:10px 20px;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+footer{
+  background:black;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SNEAKER VAULT</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">New</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Luxury Sneaker Store</h1>
+  <p>Exclusive sneakers & streetwear vibes</p>
+  <a href="#shop" class="btn">Shop Now</a>
+</section>
+
+<section class="products" id="shop">
+
+<h2>Featured Sneakers</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200">
+<div class="card-content">
+<h3>Nike Air Max</h3>
+<p class="price">€189</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200">
+<div class="card-content">
+<h3>Jordan Retro</h3>
+<p class="price">€240</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1200">
+<div class="card-content">
+<h3>Adidas Ultraboost</h3>
+<p class="price">€170</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200">
+<div class="card-content">
+<h3>Yeezy Boost</h3>
+<p class="price">€320</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1200">
+<div class="card-content">
+<h3>Puma RS-X</h3>
+<p class="price">€140</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200">
+<div class="card-content">
+<h3>New Balance 550</h3>
+<p class="price">€160</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Sneaker Vault — All Rights Reserved
+</footer>
+
+</body>
+</html>
