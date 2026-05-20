@@ -11,7 +11,6 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  scroll-behavior:smooth;
 }
 
 body{
@@ -28,28 +27,22 @@ header{
   align-items:center;
   position:sticky;
   top:0;
-  z-index:1000;
 }
 
 .logo{
-  color:#f5c542;
   font-size:30px;
   font-weight:bold;
+  color:#f5c542;
 }
 
 nav a{
   color:white;
   text-decoration:none;
   margin-left:25px;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#f5c542;
 }
 
 .hero{
-  height:90vh;
+  height:70vh;
   background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600')
   center/cover;
   display:flex;
@@ -63,12 +56,12 @@ nav a:hover{
   font-size:70px;
   margin-bottom:20px;
   background:rgba(0,0,0,0.5);
-  padding:15px 25px;
+  padding:10px 20px;
 }
 
 .hero p{
   font-size:22px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .btn{
@@ -80,14 +73,14 @@ nav a:hover{
   font-weight:bold;
 }
 
-.section{
-  padding:80px 40px;
+.products{
+  padding:60px 40px;
 }
 
-.section-title{
+.products h2{
   text-align:center;
-  font-size:42px;
-  margin-bottom:50px;
+  margin-bottom:40px;
+  font-size:40px;
 }
 
 .grid{
@@ -97,7 +90,7 @@ nav a:hover{
 }
 
 .card{
-  background:#1a1a1a;
+  background:#1b1b1b;
   border-radius:15px;
   overflow:hidden;
   transition:0.3s;
@@ -109,7 +102,7 @@ nav a:hover{
 
 .card img{
   width:100%;
-  height:260px;
+  height:250px;
   object-fit:cover;
 }
 
@@ -117,10 +110,14 @@ nav a:hover{
   padding:20px;
 }
 
+.card h3{
+  margin-bottom:10px;
+}
+
 .price{
   color:#f5c542;
-  margin:15px 0;
-  font-size:22px;
+  font-size:20px;
+  margin-bottom:15px;
 }
 
 .buy-btn{
@@ -133,45 +130,11 @@ nav a:hover{
   font-weight:bold;
 }
 
-.about{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  line-height:1.8;
-  font-size:20px;
-}
-
-.contact-form{
-  max-width:700px;
-  margin:auto;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:15px;
-  margin-bottom:20px;
-  border:none;
-  border-radius:5px;
-  background:#1f1f1f;
-  color:white;
-}
-
-.contact-form button{
-  background:#f5c542;
-  color:black;
-  border:none;
-  padding:15px 30px;
-  font-weight:bold;
-  cursor:pointer;
-  border-radius:5px;
-}
-
 footer{
   background:black;
   text-align:center;
-  padding:30px;
-  margin-top:50px;
+  padding:25px;
+  margin-top:40px;
 }
 
 </style>
@@ -183,27 +146,27 @@ footer{
   <div class="logo">SNEAKER VAULT</div>
 
   <nav>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">New</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
   <h1>Luxury Sneaker Store</h1>
-  <p>Exclusive sneakers for true sneakerheads</p>
-  <a href="#shop" class="btn">Explore Collection</a>
+  <p>Exclusive sneakers & streetwear vibes</p>
+  <a href="#shop" class="btn">Shop Now</a>
 </section>
 
-<section class="section" id="shop">
+<section class="products" id="shop">
 
-<h2 class="section-title">Featured Sneakers</h2>
+<h2>Featured Sneakers</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1711491559395-c82f70a68bfb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Nike Air Max</h3>
 <p class="price">€189</p>
@@ -212,7 +175,7 @@ footer{
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1693400652052-884f8dd3dfd9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Jordan Retro</h3>
 <p class="price">€240</p>
@@ -221,10 +184,28 @@ footer{
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1691067951700-138ca8f4841f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<div class="card-content">
+<h3>Adidas Ultraboost</h3>
+<p class="price">€170</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1718802318984-2235bb800446?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Yeezy Boost</h3>
 <p class="price">€320</p>
+<a href="#" class="buy-btn">View</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1200">
+<div class="card-content">
+<h3>Puma RS-X</h3>
+<p class="price">€140</p>
 <a href="#" class="buy-btn">View</a>
 </div>
 </div>
@@ -239,44 +220,6 @@ footer{
 </div>
 
 </div>
-
-</section>
-
-<section class="section" id="about">
-
-<h2 class="section-title">About Us</h2>
-
-<div class="about">
-  <p>
-    Sneaker Vault is a modern sneaker store inspired by luxury streetwear culture.
-    We bring together the hottest sneakers, premium style and a clean shopping experience.
-  </p>
-
-  <br>
-
-  <p>
-    From Nike to Adidas and limited-edition drops — our mission is to create the ultimate sneaker vibe online.
-  </p>
-</div>
-
-</section>
-
-<section class="section" id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="contact-form">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea rows="6" placeholder="Your Message"></textarea>
-
-<button>Send Message</button>
-
-</div>
-
 </section>
 
 <footer>
