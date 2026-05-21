@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - Sneaker Shop</title>
+<title>About - Sneaker Shop</title>
 
 <style>
 
@@ -19,9 +19,10 @@ body{
   font-family:Arial, sans-serif;
 }
 
+/* HEADER */
 header{
   background:black;
-  padding:20px 50px;
+  padding:20px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -29,121 +30,117 @@ header{
 
 .logo{
   color:#f5c542;
-  font-size:34px;
+  font-size:30px;
   font-weight:bold;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:30px;
-  font-size:18px;
-  transition:0.3s;
+  margin-left:25px;
+  font-size:16px;
 }
 
 nav a:hover{
   color:#f5c542;
 }
 
+/* HERO */
 .hero{
-  height:70vh;
-  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1800')
-  center/cover;
+  height:60vh;
+  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1800') center/cover;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
 }
 
 .hero h1{
-  font-size:90px;
-  background:rgba(0,0,0,0.65);
-  padding:25px 50px;
-  border-radius:15px;
+  font-size:70px;
+  background:rgba(0,0,0,0.6);
+  padding:20px 40px;
+  border-radius:12px;
 }
 
+/* CONTAINER */
 .container{
-  max-width:1400px;
+  max-width:1100px;
   margin:auto;
-  padding:100px 50px;
+  padding:80px 20px;
 }
 
+/* ABOUT BOX */
 .about-box{
   background:#1a1a1a;
-  padding:90px;
-  border-radius:25px;
-  line-height:2.2;
+  padding:60px;
+  border-radius:20px;
   text-align:center;
 }
 
+/* TEKST */
 .about-box h2{
   color:#f5c542;
-  font-size:46px;
-  margin-top:50px;
-  margin-bottom:25px;
+  font-size:38px;
+  margin:40px 0 20px;
 }
 
 .about-box p{
-  font-size:24px;
-  margin-bottom:35px;
+  font-size:20px;
+  line-height:1.8;
+  max-width:800px;
+  margin:0 auto 25px auto;
 }
 
-.highlight{
-  color:#f5c542;
-  font-weight:bold;
-}
-
+/* IMAGE */
 .about-image{
-  margin-top:60px;
+  margin-top:50px;
 }
 
 .about-image img{
   width:100%;
-  border-radius:20px;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:70px;
-}
-
-.stat-box{
-  background:#111;
-  padding:40px;
   border-radius:15px;
-  text-align:center;
 }
 
-.stat-box h3{
-  color:#f5c542;
-  font-size:50px;
-  margin-bottom:15px;
-}
-
-.stat-box p{
-  font-size:20px;
-}
-
+/* BUTTON */
 .back-btn{
   display:inline-block;
-  margin-top:60px;
+  margin-top:50px;
+  padding:15px 30px;
   background:#f5c542;
   color:black;
-  padding:18px 40px;
   text-decoration:none;
   border-radius:8px;
-  font-size:20px;
   font-weight:bold;
 }
 
+/* FOOTER */
 footer{
+  margin-top:60px;
   background:black;
   text-align:center;
-  padding:35px;
-  margin-top:70px;
-  font-size:18px;
+  padding:25px;
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width:768px){
+
+  .hero h1{
+    font-size:40px;
+    padding:15px 20px;
+  }
+
+  .about-box{
+    padding:30px 20px;
+  }
+
+  .about-box p{
+    font-size:16px;
+  }
+
+  .about-box h2{
+    font-size:28px;
+  }
+
 }
 
 </style>
@@ -152,94 +149,59 @@ footer{
 <body>
 
 <header>
+  <div class="logo">SNEAKER SHOP</div>
 
-<div class="logo">SNEAKER SHOP</div>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
-
-<h1>ABOUT US</h1>
-
+  <h1>ABOUT US</h1>
 </section>
 
 <div class="container">
 
-<div class="about-box">
+  <div class="about-box">
 
-<p>
-Welcome to <span class="highlight">Sneaker Shop</span> — a premium sneaker destination inspired by luxury streetwear culture and modern sneaker fashion.
-</p>
+    <p>
+      Welcome to Sneaker Shop — your destination for modern sneakers and streetwear culture.
+    </p>
 
-<p>
-Our store was created for sneaker lovers who appreciate style, comfort and exclusive footwear.
-From iconic classics to modern streetwear essentials, we carefully showcase sneakers that represent creativity and individuality.
-</p>
+    <p>
+      We bring together iconic sneakers from Nike, Adidas, Puma and New Balance in one clean online store.
+    </p>
 
-<p>
-Sneaker Shop combines a clean shopping experience with a bold luxury aesthetic.
-We believe sneakers are more than just shoes — they are part of identity, culture and self-expression.
-</p>
+    <h2>Our Mission</h2>
 
-<h2>Our Mission</h2>
+    <p>
+      Sneakers are more than shoes — they are identity, culture and lifestyle.
+      We focus on style, comfort and premium design.
+    </p>
 
-<p>
-Our mission is to bring together the best sneaker styles from brands like Nike, Adidas, Puma and New Balance while delivering a modern and stylish online experience.
-</p>
+    <h2>Why Choose Us?</h2>
 
-<p>
-We focus on high-quality design, premium visuals and a smooth user experience inspired by luxury fashion brands and sneaker culture worldwide.
-</p>
+    <p>
+      ✔ Premium sneakers<br>
+      ✔ Clean design<br>
+      ✔ Modern streetwear style<br>
+      ✔ Easy shopping experience
+    </p>
 
-<h2>Why Choose Sneaker Shop?</h2>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1800">
+    </div>
 
-<p>
-✔ Premium sneaker collections<br>
-✔ Modern luxury inspired design<br>
-✔ Streetwear culture focused<br>
-✔ Smooth online experience<br>
-✔ Passion for sneakers and fashion
-</p>
+    <a href="index.html" class="back-btn">Back to Home</a>
 
-<div class="about-image">
-
-<img src="https://images.unsplash.com/photo-1615290642882-6b9501729a27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlrZSUyMGR1bmslMjBsb3d8ZW58MHx8MHx8fDA%3D">
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h3>500+</h3>
-<p>Sneaker Styles</p>
-</div>
-
-<div class="stat-box">
-<h3>10K+</h3>
-<p>Happy Visitors</p>
-</div>
-
-<div class="stat-box">
-<h3>100%</h3>
-<p>Streetwear Inspired</p>
-</div>
-
-</div>
-
-<a href="index.html" class="back-btn">Back to Home</a>
-
-</div>
+  </div>
 
 </div>
 
 <footer>
-© 2026 Sneaker Shop — All Rights Reserved
+  © 2026 Sneaker Shop — All Rights Reserved
 </footer>
 
 </body>
