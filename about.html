@@ -1,27 +1,247 @@
-<section class="section" id="about">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Sneaker Vault</title>
 
-<h2 class="section-title">About Us</h2>
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0f0f0f;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+header{
+  background:black;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+}
+
+.logo{
+  color:#f5c542;
+  font-size:34px;
+  font-weight:bold;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:30px;
+  font-size:18px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#f5c542;
+}
+
+.hero{
+  height:70vh;
+  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1800')
+  center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:90px;
+  background:rgba(0,0,0,0.65);
+  padding:25px 50px;
+  border-radius:15px;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:100px 50px;
+}
+
+.about-box{
+  background:#1a1a1a;
+  padding:90px;
+  border-radius:25px;
+  line-height:2.2;
+}
+
+.about-box h2{
+  color:#f5c542;
+  font-size:46px;
+  margin-top:50px;
+  margin-bottom:25px;
+}
+
+.about-box p{
+  font-size:24px;
+  margin-bottom:35px;
+}
+
+.highlight{
+  color:#f5c542;
+  font-weight:bold;
+}
+
+.about-image{
+  margin-top:60px;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:70px;
+}
+
+.stat-box{
+  background:#111;
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.stat-box h3{
+  color:#f5c542;
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.stat-box p{
+  font-size:20px;
+}
+
+.back-btn{
+  display:inline-block;
+  margin-top:60px;
+  background:#f5c542;
+  color:black;
+  padding:18px 40px;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+footer{
+  background:black;
+  text-align:center;
+  padding:35px;
+  margin-top:70px;
+  font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">SNEAKER VAULT</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#shop">Shop</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>ABOUT US</h1>
+
+</section>
+
+<div class="container">
 
 <div class="about-box">
 
-<h3>Welcome to Sneaker Vault</h3>
-
 <p>
-Wij zijn een moderne sneakerstore gespecialiseerd in exclusieve sneakers,
-streetwear en populaire releases.
+Welcome to <span class="highlight">Sneaker Vault</span> — a premium sneaker destination inspired by luxury streetwear culture and modern sneaker fashion.
 </p>
 
 <p>
-Onze missie is om sneakerliefhebbers toegang te geven tot stijlvolle,
-comfortabele en unieke schoenen van topmerken zoals Nike, Adidas,
-Puma en New Balance.
+Our store was created for sneaker lovers who appreciate style, comfort and exclusive footwear.
+From iconic classics to modern streetwear essentials, we carefully showcase sneakers that represent creativity and individuality.
 </p>
 
 <p>
-Van limited editions tot dagelijkse sneakers —
-bij Sneaker Vault draait alles om stijl en kwaliteit.
+Sneaker Vault combines a clean shopping experience with a bold luxury aesthetic.
+We believe sneakers are more than just shoes — they are part of identity, culture and self-expression.
 </p>
+
+<h2>Our Mission</h2>
+
+<p>
+Our mission is to bring together the best sneaker styles from brands like Nike, Adidas, Puma and New Balance while delivering a modern and stylish online experience.
+</p>
+
+<p>
+We focus on high-quality design, premium visuals and a smooth user experience inspired by luxury fashion brands and sneaker culture worldwide.
+</p>
+
+<h2>Why Choose Sneaker Vault?</h2>
+
+<p>
+✔ Premium sneaker collections<br>
+✔ Modern luxury inspired design<br>
+✔ Streetwear culture focused<br>
+✔ Smooth online experience<br>
+✔ Passion for sneakers and fashion
+</p>
+
+<div class="about-image">
+
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1800">
 
 </div>
 
-</section>
+<div class="stats">
+
+<div class="stat-box">
+<h3>500+</h3>
+<p>Sneaker Styles</p>
+</div>
+
+<div class="stat-box">
+<h3>10K+</h3>
+<p>Happy Visitors</p>
+</div>
+
+<div class="stat-box">
+<h3>100%</h3>
+<p>Streetwear Inspired</p>
+</div>
+
+</div>
+
+<a href="index.html" class="back-btn">Back to Home</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Sneaker Vault — All Rights Reserved
+</footer>
+
+</body>
+</html>
