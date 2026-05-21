@@ -157,6 +157,9 @@ footer{
   background:#f5c542;
   color:black;
 }
+.hidden{
+  display:none;
+}
 </style>
 </head>
 
@@ -167,7 +170,7 @@ footer{
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
+    <a href="#shop">Shop</a>
     <a href="#">New</a>
     <a href="about.html">About</a>
     <a href="#">Contact</a>
@@ -199,7 +202,7 @@ footer{
 
 <div class="grid">
 
-<div class="card nike">
+<div class="card nike hidden">
 <img src="https://images.unsplash.com/photo-1711491559395-c82f70a68bfb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Nike Air Max</h3>
@@ -208,7 +211,7 @@ footer{
 </div>
 </div>
 
-<div class="card nike">
+<div class="card nike hidden">
 <img src="https://images.unsplash.com/photo-1693400652052-884f8dd3dfd9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Jordan Retro</h3>
@@ -217,7 +220,7 @@ footer{
 </div>
 </div>
 
-<div class="card adidas">
+<div class="card adidas hidden">
 <img src="https://images.unsplash.com/photo-1691067951700-138ca8f4841f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Adidas Ultraboost</h3>
@@ -226,7 +229,7 @@ footer{
 </div>
 </div>
 
-<div class="card adidas">
+<div class="card adidas hidden">
 <img src="https://images.unsplash.com/photo-1612723683658-89814a429607?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Yeezy Boost</h3>
@@ -235,7 +238,7 @@ footer{
 </div>
 </div>
 
-<div class="card puma">
+<div class="card puma hidden">
 <img src="https://images.unsplash.com/photo-1715695163797-bf164a63aaed?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Puma RS-X</h3>
@@ -244,7 +247,7 @@ footer{
 </div>
 </div>
 
-<div class="card newbalance">
+<div class="card newbalance hidden">
 <img src="https://images.unsplash.com/photo-1665517464780-ab4f42d8af95?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>New Balance 550</h3>
@@ -253,7 +256,7 @@ footer{
 </div>
 </div>
 
-<div class="card nike">
+<div class="card nike hidden">
 <img src="https://images.unsplash.com/photo-1640391846040-6e9e41388ad4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <div class="card-content">
 <h3>Nike Air Force 1</h3>
@@ -276,14 +279,10 @@ let cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
 
-if(category === 'all'){
+card.style.display = 'none';
+
+if(card.classList.contains(category)){
   card.style.display = 'block';
-}
-else if(card.classList.contains(category)){
-  card.style.display = 'block';
-}
-else{
-  card.style.display = 'none';
 }
 
 });
