@@ -32,7 +32,7 @@ header{
 .logo{
   font-size:30px;
   font-weight:bold;
-  color:#f5c542;
+  color:#e9edf9;
 }
 
 nav a{
@@ -41,6 +41,7 @@ nav a{
   margin-left:25px;
 }
 
+/* HERO */
 .hero{
   height:70vh;
   background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600')
@@ -64,8 +65,9 @@ nav a{
   margin-bottom:20px;
 }
 
+/* BUTTONS */
 .btn{
-  background:#f5c542;
+  background:#e9edf9;
   color:black;
   padding:15px 35px;
   border-radius:6px;
@@ -73,6 +75,7 @@ nav a{
   font-weight:bold;
 }
 
+/* PRODUCTS */
 .products{
   padding:60px 40px;
 }
@@ -115,14 +118,14 @@ nav a{
 }
 
 .price{
-  color:#f5c542;
+  color:#e9edf9;
   font-size:20px;
   margin-bottom:15px;
 }
 
 .buy-btn{
   display:inline-block;
-  background:#f5c542;
+  background:#e9edf9;
   color:black;
   padding:10px 20px;
   text-decoration:none;
@@ -130,12 +133,7 @@ nav a{
   font-weight:bold;
 }
 
-footer{
-  background:black;
-  text-align:center;
-  padding:25px;
-  margin-top:40px;
-}
+/* FILTERS */
 .filters{
   text-align:center;
   margin-bottom:40px;
@@ -154,12 +152,11 @@ footer{
 }
 
 .filters button:hover{
-  background:#f5c542;
+  background:#e9edf9;
   color:black;
 }
-.hidden{
-  display:none;
-}
+
+/* HOME SECTION */
 .home-info{
   padding:100px 40px;
 }
@@ -183,7 +180,7 @@ footer{
 .home-text h2{
   font-size:60px;
   margin-bottom:30px;
-  color:#f5c542;
+  color:#e9edf9;
 }
 
 .home-text p{
@@ -202,10 +199,11 @@ footer{
   border-radius:20px;
 }
 
+/* HOME BUTTON */
 .home-btn{
   display:inline-block;
   margin-top:20px;
-  background:#f5c542;
+  background:#e9edf9;
   color:black;
   padding:16px 35px;
   text-decoration:none;
@@ -213,6 +211,15 @@ footer{
   font-weight:bold;
   font-size:18px;
 }
+
+/* FOOTER */
+footer{
+  background:black;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+}
+
 </style>
 </head>
 
@@ -237,10 +244,9 @@ footer{
 </section>
 
 <section class="products" id="shop">
-
 <h2>Featured Sneakers</h2>
-
 </section>
+
 <section class="home-info">
 
 <div class="home-content">
@@ -280,6 +286,7 @@ Explore our latest sneaker collections and discover timeless streetwear essentia
 <footer>
 © 2026 Sneaker Shop — All Rights Reserved
 </footer>
+
 <script>
 
 function filterSelection(category){
@@ -299,5 +306,6 @@ if(card.classList.contains(category)){
 }
 
 </script>
+
 </body>
 </html>
