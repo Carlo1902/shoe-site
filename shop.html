@@ -19,9 +19,25 @@
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
+  <a href="#" onclick="toggleCart()">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
 </nav>
 
 </header>
+<div id="cart" style="display:none; position:fixed; top:90px; right:20px; width:320px; background:#1a1a1a; padding:20px; border-radius:10px; z-index:1000;">
+
+<h2>Your Cart</h2>
+
+<div id="cart-items"></div>
+
+<hr>
+
+<p>Total: €<span id="cart-total">0</span></p>
+
+<button onclick="clearCart()">Clear Cart</button>
+
+</div>
 
 <section class="hero">
 
@@ -51,6 +67,10 @@
 <h3>Nike Air Max</h3>
 <p class="price">€189</p>
 <a href="airmax.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Nike Air Max',189)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -60,6 +80,10 @@
 <h3>Nike Air Force 1</h3>
 <p class="price">€150</p>
 <a href="airforce1.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Nike Air Force 1',150)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -69,6 +93,10 @@
 <h3>Jordan Retro</h3>
 <p class="price">€240</p>
 <a href="jordan.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Jordan Retro',240)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -78,6 +106,10 @@
 <h3>Adidas Ultraboost</h3>
 <p class="price">€170</p>
 <a href="ultraboost.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Adidas Ultraboost',170)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -87,6 +119,10 @@
 <h3>Yeezy Boost</h3>
 <p class="price">€320</p>
 <a href="yeezy.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Yeezy Boost',320)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -96,6 +132,10 @@
 <h3>Puma RS-X</h3>
 <p class="price">€140</p>
 <a href="pumarsx.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Puma RS-X',140)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -105,6 +145,10 @@
 <h3>New Balance 550</h3>
 <p class="price">€160</p>
 <a href="newbalance.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('New Balance 550',160)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -114,6 +158,10 @@
 <h3>Nike Dunk Low</h3>
 <p class="price">€120</p>
 <a href="dunk.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Nike Dunk Low',120)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -123,6 +171,10 @@
 <h3>Adidas Campus</h3>
 <p class="price">€140</p>
 <a href="campus.html" class="buy-btn">More</a>
+<button class="buy-btn"
+onclick="addToCart('Adidas Campus',140)">
+Add to Cart
+</button>
 </div>
 </div>
 
@@ -149,6 +201,78 @@ if(card.classList.contains(category)){
 }
 
 });
+
+}
+
+</script>
+<script>
+
+let cart = [];
+
+function addToCart(name, price){
+
+cart.push({
+  name:name,
+  price:price
+});
+
+updateCart();
+
+}
+
+function updateCart(){
+
+let cartItems = document.getElementById("cart-items");
+let cartCount = document.getElementById("cart-count");
+let cartTotal = document.getElementById("cart-total");
+
+cartItems.innerHTML = "";
+
+let total = 0;
+
+cart.forEach((item,index)=>{
+
+total += item.price;
+
+cartItems.innerHTML += `
+<div style="margin-bottom:10px;">
+${item.name} - €${item.price}
+<button onclick="removeItem(${index})">X</button>
+</div>
+`;
+
+});
+
+cartCount.textContent = cart.length;
+cartTotal.textContent = total;
+
+}
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+function clearCart(){
+
+cart = [];
+
+updateCart();
+
+}
+
+function toggleCart(){
+
+let cartBox = document.getElementById("cart");
+
+if(cartBox.style.display === "none"){
+cartBox.style.display = "block";
+}else{
+cartBox.style.display = "none";
+}
 
 }
 
