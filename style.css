@@ -288,5 +288,32 @@ footer{
 .fav-btn:hover{
   opacity:0.85;
 }
+.filter-box{
+  text-align:center;
+  padding:80px 20px;
+}
 
+.filter-box h2{
+  font-size:42px;
+  margin-bottom:30px;
+  color:#e9edf9;
+}
+
+.filter-box select{
+  padding:15px;
+  margin:10px;
+  min-width:220px;
+  border-radius:8px;
+  border:none;
+}
+
+.filter-box button{
+  padding:15px 35px;
+  border:none;
+  border-radius:8px;
+  background:#e9edf9;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+}
 }
