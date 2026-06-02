@@ -22,9 +22,30 @@
   <a href="#" onclick="toggleCart()">
 🛒 Cart (<span id="cart-count">0</span>)
 </a>
+<a href="#" onclick="toggleFavorites()">
+❤️ Favorites (<span id="fav-count">0</span>)
+</a>
 </nav>
 
 </header>
+<div id="favorites"
+style="
+display:none;
+position:fixed;
+top:90px;
+right:20px;
+width:320px;
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+z-index:1000;
+">
+
+<h2>Favorites</h2>
+
+<div id="favorite-items"></div>
+
+</div>
 <div id="cart" style="display:none; position:fixed; top:90px; right:20px; width:320px; background:#1a1a1a; padding:20px; border-radius:10px; z-index:1000;">
 
 <h2>Your Cart</h2>
@@ -313,6 +334,7 @@ cartBox.style.display = "none";
 }
 
 </script>
+<script src="script.js"></script>
 
 </body>
 </html>
