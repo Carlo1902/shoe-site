@@ -80,7 +80,71 @@ z-index:1000;
 
 </div>
 
-<div class="grid">
+<section class="filter-box">
+
+<h2>Find Your Perfect Sneaker</h2>
+
+<select id="brand">
+
+<option value="all">All Brands</option>
+
+<option value="nike">Nike</option>
+
+<option value="adidas">Adidas</option>
+
+<option value="puma">Puma</option>
+
+<option value="newbalance">New Balance</option>
+
+</select>
+
+<select id="price">
+
+<option value="all">Any Price</option>
+
+<option value="100">Under €100</option>
+
+<option value="150">Under €150</option>
+
+<option value="200">Under €200</option>
+
+<option value="250">Under €250</option>
+
+<option value="300">Under €300</option>
+
+</select>
+
+<select id="size">
+
+<option value="">Choose Size</option>
+
+<option value="38">38</option>
+
+<option value="39">39</option>
+
+<option value="40">40</option>
+
+<option value="41">41</option>
+
+<option value="42">42</option>
+
+<option value="43">43</option>
+
+<option value="44">44</option>
+
+<option value="45">45</option>
+
+</select>
+
+<button onclick="filterSneakers()">
+
+Show Sneakers
+
+</button>
+
+</section>
+
+<div class="grid" id="products-grid" style="display:none;">
 
 <div class="card nike">
 <img src="https://images.unsplash.com/photo-1711491559395-c82f70a68bfb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
