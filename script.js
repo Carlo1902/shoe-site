@@ -58,4 +58,62 @@ function toggleFavorites(){
     favBox.style.display = "none";
   }
 
+function filterSneakers(){
+
+let brand =
+document.getElementById("brand").value;
+
+let price =
+document.getElementById("price").value;
+
+let size =
+document.getElementById("size").value;
+
+if(size === ""){
+
+alert("Please select a size");
+
+return;
+
+}
+
+document.getElementById("products-grid")
+.style.display = "grid";
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let brandMatch =
+brand === "all" ||
+card.classList.contains(brand);
+
+let priceMatch = true;
+
+if(price !== "all"){
+
+priceMatch =
+Number(card.dataset.price)
+<=
+Number(price);
+
+}
+
+if(
+brandMatch &&
+priceMatch
+){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+}
 }
