@@ -1,4 +1,6 @@
-/* ========== GLOBAL ========== */
+/* =========================
+   GLOBAL
+========================= */
 
 *{
   margin:0;
@@ -6,21 +8,21 @@
   box-sizing:border-box;
 }
 
-body{
-  font-family:Arial, sans-serif;
-  background:#0f0f0f;
-  color:#e9edf9;
-}
-
-/* ========== COLORS (centrale controle) ========== */
-
 :root{
   --accent:#e9edf9;
   --dark:#0f0f0f;
   --card:#1b1b1b;
 }
 
-/* ========== HEADER ========== */
+body{
+  font-family:Arial,sans-serif;
+  background:var(--dark);
+  color:white;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
   background:black;
@@ -30,6 +32,7 @@ header{
   align-items:center;
   position:sticky;
   top:0;
+  z-index:1000;
 }
 
 .logo{
@@ -42,71 +45,125 @@ nav a{
   color:white;
   text-decoration:none;
   margin-left:25px;
-}
-
-/* ========== BUTTONS ========== */
-
-.btn,
-.buy-btn,
-.home-btn{
-  background:var(--accent);
-  color:black;
-  padding:12px 25px;
-  border-radius:6px;
   font-weight:bold;
-  text-decoration:none;
-  display:inline-block;
 }
 
-/* hover */
-.btn:hover,
-.buy-btn:hover,
-.home-btn:hover{
-  opacity:0.85;
+nav a:hover{
+  color:var(--accent);
 }
 
-/* ========== HERO ========== */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  height:70vh;
-  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600')
-  center/cover;
+  height:60vh;
+  background:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600') center/cover;
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   text-align:center;
 }
 
 .hero h1{
   font-size:70px;
-  margin-bottom:20px;
-  background:rgba(0,0,0,0.5);
-  padding:10px 20px;
+  background:rgba(0,0,0,0.6);
+  padding:20px 40px;
+  border-radius:12px;
 }
 
-.hero p{
-  font-size:22px;
-  margin-bottom:20px;
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+.buy-btn,
+.home-btn,
+.back-btn{
+  display:inline-block;
+  background:var(--accent);
+  color:black;
+  text-decoration:none;
+  border:none;
+  padding:12px 25px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* ========== PRODUCTS ========== */
-
-.products{
-  padding:60px 40px;
+.btn:hover,
+.buy-btn:hover,
+.home-btn:hover,
+.back-btn:hover{
+  opacity:0.9;
 }
 
-.products h2{
+/* =========================
+   SHOP FILTER
+========================= */
+
+.filter-box{
+  max-width:1100px;
+  margin:60px auto;
+  padding:50px;
+  background:#1a1a1a;
+  border-radius:20px;
   text-align:center;
-  margin-bottom:40px;
-  font-size:40px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
 }
+
+.filter-box h2{
+  font-size:42px;
+  margin-bottom:35px;
+  color:var(--accent);
+}
+
+.filter-box select{
+  width:280px;
+  padding:18px;
+  margin:12px;
+  font-size:18px;
+  border-radius:12px;
+  border:2px solid #333;
+  background:#111;
+  color:white;
+  cursor:pointer;
+}
+
+.filter-box select:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+
+.filter-box button{
+  display:block;
+  width:280px;
+  margin:25px auto 0;
+  padding:18px;
+  font-size:18px;
+  font-weight:bold;
+  background:var(--accent);
+  color:black;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.filter-box button:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:30px;
+  padding:40px;
 }
+
 .card{
   background:var(--card);
   border-radius:15px;
@@ -115,7 +172,7 @@ nav a{
 }
 
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
 }
 
 .card img{
@@ -140,30 +197,28 @@ nav a{
   margin-bottom:15px;
 }
 
-/* ========== FILTERS ========== */
+/* =========================
+   FAVORITES BUTTON
+========================= */
 
-.filters{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.filters button{
-  background:#1f1f1f;
-  color:white;
-  border:none;
-  padding:12px 25px;
-  margin:10px;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.filters button:hover{
+.fav-btn{
   background:var(--accent);
   color:black;
+  border:none;
+  padding:10px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-bottom:10px;
 }
 
-/* ========== HOME SECTION ========== */
+.fav-btn:hover{
+  opacity:0.9;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
 
 .home-info{
   padding:100px 40px;
@@ -207,19 +262,13 @@ nav a{
   border-radius:20px;
 }
 
-/* ========== FOOTER ========== */
-
-footer{
-  background:black;
-  text-align:center;
-  padding:25px;
-  margin-top:40px;
-}
-/* ABOUT PAGE */
+/* =========================
+   ABOUT PAGE
+========================= */
 
 .about-box{
   max-width:1100px;
-  margin:auto;
+  margin:60px auto;
   background:#1a1a1a;
   padding:80px 50px;
   border-radius:25px;
@@ -228,22 +277,22 @@ footer{
 
 .about-title{
   font-size:60px;
-  margin-bottom:40px;
   color:var(--accent);
+  margin-bottom:40px;
 }
 
 .about-subtitle{
   font-size:40px;
-  margin-top:60px;
-  margin-bottom:25px;
   color:var(--accent);
+  margin-top:50px;
+  margin-bottom:25px;
 }
 
 .about-text{
   font-size:22px;
   line-height:2;
   max-width:850px;
-  margin:0 auto 35px auto;
+  margin:0 auto 35px;
   color:#e6e6e6;
 }
 
@@ -256,116 +305,50 @@ footer{
   border-radius:20px;
 }
 
-@media(max-width:768px){
+/* =========================
+   FOOTER
+========================= */
 
-  .about-box{
-    padding:40px 20px;
-  }
-
-  .about-title{
-    font-size:38px;
-  }
-
-  .about-subtitle{
-    font-size:28px;
-  }
-
-  .about-text{
-    font-size:17px;
-    line-height:1.8;
-  }
- /* FAVORITES BUTTON */
-
-/* FAVORITES BUTTON */
-
-.fav-btn{
-  background:#e9edf9;
-  color:black;
-  border:none;
-  padding:10px 15px;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.fav-btn:hover{
-  opacity:0.85;
-}
-
-/* SHOP FILTER */
-
-.filter-box{
-  max-width:1100px;
-  margin:60px auto;
-  padding:50px;
-  background:#1a1a1a;
-  border-radius:20px;
+footer{
+  background:black;
   text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  padding:25px;
+  margin-top:40px;
 }
 
-.filter-box h2{
-  font-size:42px;
-  margin-bottom:35px;
-  color:#e9edf9;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-.filter-box select{
-  width:280px;
-  padding:18px;
-  margin:12px;
-  font-size:18px;
-  border-radius:12px;
-  border:2px solid #333;
-  background:#111;
-  color:white;
-  cursor:pointer;
-}
+@media(max-width:900px){
 
-.filter-box select:focus{
-  outline:none;
-  border-color:#e9edf9;
-}
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.filter-box button{
-  display:block;
-  width:280px;
-  margin:25px auto 0;
-  padding:18px;
-  font-size:18px;
-  font-weight:bold;
-  background:#e9edf9;
-  color:black;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
 }
-
-.filter-box button:hover{
-  opacity:0.9;
-  transform:translateY(-2px);
-}
-
-/* MOBILE */
 
 @media(max-width:768px){
 
-  .about-box{
-    padding:40px 20px;
+  header{
+    flex-direction:column;
+    gap:15px;
   }
 
-  .about-title{
-    font-size:38px;
+  nav{
+    text-align:center;
   }
 
-  .about-subtitle{
-    font-size:28px;
+  nav a{
+    margin:0 10px;
   }
 
-  .about-text{
-    font-size:17px;
-    line-height:1.8;
+  .hero h1{
+    font-size:40px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
   }
 
   .filter-box{
@@ -376,6 +359,31 @@ footer{
   .filter-box button{
     width:100%;
     max-width:400px;
+  }
+
+  .about-box{
+    padding:40px 20px;
+  }
+
+  .about-title{
+    font-size:38px;
+  }
+
+  .about-subtitle{
+    font-size:28px;
+  }
+
+  .about-text{
+    font-size:17px;
+    line-height:1.8;
+  }
+
+  .home-text h2{
+    font-size:40px;
+  }
+
+  .home-text p{
+    font-size:18px;
   }
 
 }
