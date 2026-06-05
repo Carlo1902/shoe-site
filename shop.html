@@ -68,18 +68,6 @@ z-index:1000;
 
 <div class="container">
 
-<div class="filters">
-
-<button onclick="filterSelection('nike')">Nike</button>
-
-<button onclick="filterSelection('adidas')">Adidas</button>
-
-<button onclick="filterSelection('puma')">Puma</button>
-
-<button onclick="filterSelection('newbalance')">New Balance</button>
-
-</div>
-
 <section class="filter-box">
 
 <h2>Find Your Perfect Sneaker</h2>
@@ -138,10 +126,6 @@ z-index:1000;
 
 <button onclick="filterSneakers()">
 Show Sneakers
-</button>
-
-Show Sneakers
-
 </button>
 
 </section>
@@ -309,25 +293,6 @@ Add to Cart
 © 2026 Sneaker Vault — All Rights Reserved
 </footer>
 
-<script>
-
-function filterSelection(category){
-
-let cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-
-card.style.display = 'none';
-
-if(card.classList.contains(category)){
-  card.style.display = 'block';
-}
-
-});
-
-}
-
-</script>
 <script>
 
 let cart = [];
