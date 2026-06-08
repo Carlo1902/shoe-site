@@ -2,70 +2,137 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.product-page{
+  max-width:1200px;
+  margin:80px auto;
+  display:flex;
+  gap:50px;
+  align-items:flex-start;
+  padding:20px;
+}
+
+.product-image{
+  flex:1;
+}
+
+.product-image img{
+  width:100%;
+  max-width:550px;
+  border-radius:20px;
+  background:#fff;
+}
+
+.product-info{
+  flex:1;
+}
+
+.product-info h1{
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+.product-price{
+  font-size:40px;
+  margin-bottom:30px;
+}
+
+.product-description{
+  font-size:22px;
+  line-height:2;
+  margin-bottom:40px;
+}
+
+.back-btn{
+  display:inline-block;
+  padding:15px 35px;
+  background:#e9edf9;
+  color:black;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+@media(max-width:900px){
+
+  .product-page{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .product-image img{
+    max-width:100%;
+  }
+
+  .product-info h1{
+    font-size:40px;
+  }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<div class="about-box">
+<div class="product-page">
 
-<img id="product-image"
-style="width:100%;max-width:500px;">
+<div class="product-image">
+
+<img id="product-image">
+
+</div>
+
+<div class="product-info">
 
 <h1 id="product-name"></h1>
 
-<h2 id="product-price"></h2>
+<div class="product-price" id="product-price"></div>
 
-<p id="product-description"></p>
+<div class="product-description"
+id="product-description"></div>
 
-<a href="shop.html"
-class="buy-btn">
+<a href="shop.html" class="back-btn">
 Back To Shop
 </a>
+
+</div>
 
 </div>
 
 <script>
 
 let params =
-new URLSearchParams(
-window.location.search
-);
+new URLSearchParams(window.location.search);
 
-let id =
-params.get("id");
+let id = params.get("id");
 
 let sneakers =
-JSON.parse(
-localStorage.getItem("sneakers")
-)
+JSON.parse(localStorage.getItem("sneakers"))
 || [];
 
 let shoe =
-sneakers.find(
-s => s.id == id
-);
+sneakers.find(s => s.id == id);
 
 if(shoe){
 
-document.getElementById(
-"product-image"
-).src = shoe.image;
+document.getElementById("product-image").src =
+shoe.image;
 
-document.getElementById(
-"product-name"
-).innerText = shoe.name;
+document.getElementById("product-name").innerText =
+shoe.name;
 
-document.getElementById(
-"product-price"
-).innerText =
+document.getElementById("product-price").innerText =
 "€" + shoe.price;
 
-document.getElementById(
-"product-description"
-).innerText =
+document.getElementById("product-description").innerText =
 shoe.description;
 
 }
