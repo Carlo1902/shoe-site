@@ -367,5 +367,55 @@ cartBox.style.display = "none";
 </script>
 <script src="script.js"></script>
 
+<script>
+
+let sneakers =
+JSON.parse(localStorage.getItem("sneakers"))
+|| [];
+
+let grid =
+document.getElementById("products-grid");
+
+sneakers.forEach(shoe => {
+
+grid.innerHTML += `
+
+<div class="card ${shoe.brand.toLowerCase()}" data-price="${shoe.price}">
+
+<img src="${shoe.image}">
+
+<div class="card-content">
+
+<h3>${shoe.name}</h3>
+
+<p class="price">
+€${shoe.price}
+</p>
+
+<button class="fav-btn"
+onclick="addToFavorites('${shoe.name}')">
+❤️ Favorite
+</button>
+
+<a href="product.html?id=${shoe.id}"
+class="buy-btn">
+More
+</a>
+
+<button class="buy-btn"
+onclick="addToCart('${shoe.name}',${shoe.price})">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+</script>
+
 </body>
 </html>

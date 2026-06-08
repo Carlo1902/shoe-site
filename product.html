@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>Product</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="about-box">
+
+<img id="product-image"
+style="width:100%;max-width:500px;">
+
+<h1 id="product-name"></h1>
+
+<h2 id="product-price"></h2>
+
+<p id="product-description"></p>
+
+<a href="shop.html"
+class="buy-btn">
+Back To Shop
+</a>
+
+</div>
+
+<script>
+
+let params =
+new URLSearchParams(
+window.location.search
+);
+
+let id =
+params.get("id");
+
+let sneakers =
+JSON.parse(
+localStorage.getItem("sneakers")
+)
+|| [];
+
+let shoe =
+sneakers.find(
+s => s.id == id
+);
+
+if(shoe){
+
+document.getElementById(
+"product-image"
+).src = shoe.image;
+
+document.getElementById(
+"product-name"
+).innerText = shoe.name;
+
+document.getElementById(
+"product-price"
+).innerText =
+"€" + shoe.price;
+
+document.getElementById(
+"product-description"
+).innerText =
+shoe.description;
+
+}
+
+</script>
+
+</body>
+</html>

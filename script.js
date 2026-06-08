@@ -115,3 +115,41 @@ function filterSneakers(){
   });
 
 }
+
+function addSneaker(){
+
+let sneakers =
+JSON.parse(localStorage.getItem("sneakers"))
+|| [];
+
+let sneaker = {
+
+id: Date.now(),
+
+name:
+document.getElementById("name").value,
+
+price:
+document.getElementById("price").value,
+
+brand:
+document.getElementById("brand").value,
+
+image:
+document.getElementById("image").value,
+
+description:
+document.getElementById("description").value
+
+};
+
+sneakers.push(sneaker);
+
+localStorage.setItem(
+"sneakers",
+JSON.stringify(sneakers)
+);
+
+alert("Sneaker Added!");
+
+}
