@@ -112,16 +112,17 @@ Back To Shop
 let params =
 new URLSearchParams(window.location.search);
 
-let id = params.get("id");
+let id =
+Number(params.get("id"));
 
-let sneakers =
-JSON.parse(localStorage.getItem("sneakers"))
-|| [];
+fetch("sneakers.json")
+.then(response => response.json())
+.then(sneakers => {
 
 let shoe =
-sneakers.find(s => s.id == id);
+sneakers.find(s => s.id === id);
 
-if(shoe){
+if(!shoe) return;
 
 document.getElementById("product-image").src =
 shoe.image;
@@ -135,7 +136,7 @@ document.getElementById("product-price").innerText =
 document.getElementById("product-description").innerText =
 shoe.description;
 
-}
+});
 
 </script>
 
