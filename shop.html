@@ -369,9 +369,9 @@ cartBox.style.display = "none";
 
 <script>
 
-let sneakers =
-JSON.parse(localStorage.getItem("sneakers"))
-|| [];
+fetch("sneakers.json")
+.then(response => response.json())
+.then(sneakers => {
 
 let grid =
 document.getElementById("products-grid");
@@ -380,7 +380,7 @@ sneakers.forEach(shoe => {
 
 grid.innerHTML += `
 
-<div class="card ${shoe.brand.toLowerCase()}" data-price="${shoe.price}">
+<div class="card ${shoe.brand}" data-price="${shoe.price}">
 
 <img src="${shoe.image}">
 
@@ -388,9 +388,7 @@ grid.innerHTML += `
 
 <h3>${shoe.name}</h3>
 
-<p class="price">
-€${shoe.price}
-</p>
+<p class="price">€${shoe.price}</p>
 
 <button class="fav-btn"
 onclick="addToFavorites('${shoe.name}')">
@@ -412,6 +410,8 @@ Add to Cart
 </div>
 
 `;
+
+});
 
 });
 
