@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Sneaker Shop</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.contact-container{
+max-width:800px;
+margin:80px auto;
+padding:20px;
+}
+
+.contact-container h1{
+font-size:50px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.contact-container p{
+font-size:18px;
+text-align:center;
+margin-bottom:40px;
+color:#ccc;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:16px;
+background:#1a1a1a;
+color:white;
+}
+
+.contact-form textarea{
+height:180px;
+resize:none;
+}
+
+.contact-form button{
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:#e9edf9;
+color:black;
+}
+
+.contact-form button:hover{
+opacity:0.9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">SNEAKER SHOP</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="contact-container">
+
+<h1>Contact Us</h1>
+
+<p>
+Have a question about an order, a sneaker, or anything else?
+Feel free to contact us and we'll get back to you as soon as possible.
+</p>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Your Message" required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+<footer>
+© 2026 Sneaker Vault — All Rights Reserved
+</footer>
+
+</body>
+</html>
