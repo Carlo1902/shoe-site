@@ -155,105 +155,63 @@ All Rights Reserved
 <script>
 
 fetch("sneakers.json")
+  .then(response => response.json())
+  .then(sneakers => {
 
-.then(response => response.json())
+    const grid = document.getElementById("products-grid");
+    grid.innerHTML = "";
 
-.then(sneakers => {
+    sneakers.forEach(shoe => {
 
-const grid =
-document.getElementById("products-grid");
+      grid.innerHTML += `
+        <div class="card ${shoe.brand}"
+          data-price="${shoe.price}">
 
-grid.innerHTML = "";
+          <img src="${shoe.image}" alt="${shoe.name}">
 
-sneakers.forEach(shoe => {
+          <div class="card-content">
 
-grid.innerHTML += `
+            <h3>${shoe.name}</h3>
 
-<div class="card ${shoe.brand}"
-data-price="${shoe.price}">
+            <p class="price">€${shoe.price}</p>
 
-<img src="${shoe.image}"
-alt="${shoe.name}">
+            <button class="fav-btn"
+              onclick="addToFavorites(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
+              ❤️ Favorite
+            </button>
 
-<div class="card-content">
+            <a href="product.html?id=${shoe.id}" class="buy-btn">
+              More
+            </a>
 
-<h3>${shoe.name}</h3>
+            <button class="buy-btn"
+              onclick="addToCart(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
+              Add to Cart
+            </button>
 
-<p class="price">
-€${shoe.price}
-</p>
+          </div>
 
-<button
-class="fav-btn"
+        </div>
+      `;
+    });
 
-onclick="addToFavorites(
-${shoe.id},
-'${shoe.name}',
-${shoe.price},
-'${shoe.image}'
-)">
-❤️ Favorite
-</button>
+    // deze mogen blijven staan
+    updateCartCount();
+    updateFavoriteCount();
 
-<a
-href="product.html?id=${shoe.id}"
-class="buy-btn">
+  })
+  .catch(error => {
 
-More
+    console.error(error);
 
-</a>
-
-<button
-class="buy-btn"
-
-onclick="addToCart(
-${shoe.id},
-'${shoe.name}',
-${shoe.price},
-'${shoe.image}'
-)">
-
-Add to Cart
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-});
-
-.catch(error => {
-
-console.error(error);
-
-document.getElementById("products-grid").innerHTML = `
-
-<div style="grid-column:1/-1;
-text-align:center;
-padding:60px;">
-
-<h2>
-Unable to load sneakers.
-</h2>
-
-<p>
-Please try again later.
-</p>
-
-</div>
-
-`;
-
-});
-
-updateCartCount();
-
-updateFavoriteCount();
-
+    document.getElementById("products-grid").innerHTML = `
+      <div style="grid-column:1/-1; text-align:center; padding:60px;">
+        <h2>Unable to load sneakers.</h2>
+        <p>Please try again later.</p>
+      </div>
+    `;
+  });
+  
 </script>
 
 </body>
