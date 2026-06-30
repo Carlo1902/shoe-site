@@ -155,54 +155,40 @@ All Rights Reserved
 <script>
 
 fetch("sneakers.json")
-  .then(response => response.json())
+  .then(r => r.json())
   .then(sneakers => {
 
     const grid = document.getElementById("products-grid");
     grid.innerHTML = "";
 
     sneakers.forEach(shoe => {
-
       grid.innerHTML += `
-        <div class="card ${shoe.brand}"
-          data-price="${shoe.price}">
-
+        <div class="card ${shoe.brand}" data-price="${shoe.price}">
           <img src="${shoe.image}" alt="${shoe.name}">
 
           <div class="card-content">
-
             <h3>${shoe.name}</h3>
+            <p>€${shoe.price}</p>
 
-            <p class="price">€${shoe.price}</p>
-
-            <button class="fav-btn"
-              onclick="addToFavorites(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
+            <button onclick="addToFavorites(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
               ❤️ Favorite
             </button>
 
-            <a href="product.html?id=${shoe.id}" class="buy-btn">
-              More
-            </a>
+            <a href="product.html?id=${shoe.id}">More</a>
 
-            <button class="buy-btn"
-              onclick="addToCart(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
+            <button onclick="addToCart(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
               Add to Cart
             </button>
-
           </div>
-
         </div>
       `;
     });
 
-    // deze mogen blijven staan
     updateCartCount();
     updateFavoriteCount();
 
   })
-  .catch(error => {
-
-    console.error(error);
+  .catch(err => console.error(err));
 
     document.getElementById("products-grid").innerHTML = `
       <div style="grid-column:1/-1; text-align:center; padding:60px;">
