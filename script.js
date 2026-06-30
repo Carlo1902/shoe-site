@@ -1,155 +1,271 @@
-let favorites = [];
+// ==========================
+// SNEAKER SHOP SCRIPT
+// ==========================
 
-function addToFavorites(name){
+// ---------- LOCAL STORAGE ----------
 
-  if(!favorites.includes(name)){
-    favorites.push(name);
-  }
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  updateFavorites();
+// ---------- SAVE ----------
+
+function saveCart(){
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+}
+
+function saveFavorites(){
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    updateFavoriteCount();
+}
+
+// ---------- COUNTERS ----------
+
+function updateCartCount(){
+
+    let count = document.getElementById("cart-count");
+
+    if(!count) return;
+
+    let total = 0;
+
+    cart.forEach(item=>{
+
+        total += item.quantity;
+
+    });
+
+    count.innerText = total;
 
 }
 
-function updateFavorites(){
+function updateFavoriteCount(){
 
-  let box = document.getElementById("favorite-items");
-  let count = document.getElementById("fav-count");
+    let count = document.getElementById("fav-count");
 
-  if(!box || !count){
-    return;
-  }
+    if(!count) return;
 
-  box.innerHTML = "";
-
-  favorites.forEach((item,index)=>{
-
-    box.innerHTML += `
-      <div style="margin-bottom:10px;">
-        ${item}
-        <button onclick="removeFavorite(${index})">❌</button>
-      </div>
-    `;
-
-  });
-
-  count.textContent = favorites.length;
+    count.innerText = favorites.length;
 
 }
 
-function removeFavorite(index){
+// ==========================
+// CART FUNCTIONS
+// ==========================
 
-  favorites.splice(index,1);
+function addToCart(id, name, price, image){
 
-  updateFavorites();
+    let existing = cart.find(item => item.id === id);
 
-}
+    if(existing){
 
-function toggleFavorites(){
-
-  let favBox = document.getElementById("favorites");
-
-  if(!favBox){
-    return;
-  }
-
-  if(favBox.style.display === "none"){
-    favBox.style.display = "block";
-  }else{
-    favBox.style.display = "none";
-  }
-
-}
-
-function filterSneakers(){
-
-  let brand =
-  document.getElementById("brand").value;
-
-  let price =
-  document.getElementById("price").value;
-
-  let size =
-  document.getElementById("size").value;
-
-  if(size === ""){
-
-    alert("Please select a size");
-
-    return;
-
-  }
-
-  document.getElementById("products-grid")
-  .style.display = "grid";
-
-  let cards =
-  document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-
-    let brandMatch =
-    brand === "all" ||
-    card.classList.contains(brand);
-
-    let priceMatch = true;
-
-    if(price !== "all"){
-
-      priceMatch =
-      Number(card.dataset.price)
-      <=
-      Number(price);
-
-    }
-
-    if(brandMatch && priceMatch){
-
-      card.style.display = "block";
+        existing.quantity++;
 
     }else{
 
-      card.style.display = "none";
+        cart.push({
+
+            id: id,
+            name: name,
+            price: Number(price),
+            image: image,
+            quantity: 1
+
+        });
 
     }
 
-  });
+    saveCart();
+
+    alert(name + " added to cart!");
 
 }
 
-function addSneaker(){
+// ==========================
 
-let sneakers =
-JSON.parse(localStorage.getItem("sneakers"))
-|| [];
+function removeFromCart(id){
 
-let sneaker = {
+    cart = cart.filter(item => item.id !== id);
 
-id: Date.now(),
+    saveCart();
 
-name:
-document.getElementById("name").value,
-
-price:
-document.getElementById("price").value,
-
-brand:
-document.getElementById("brand").value,
-
-image:
-document.getElementById("image").value,
-
-description:
-document.getElementById("description").value
-
-};
-
-sneakers.push(sneaker);
-
-localStorage.setItem(
-"sneakers",
-JSON.stringify(sneakers)
-);
-
-alert("Sneaker Added!");
+    location.reload();
 
 }
+
+// ==========================
+
+function changeQuantity(id, amount){
+
+    let item = cart.find(item => item.id === id);
+
+    if(!item) return;
+
+    item.quantity += amount;
+
+    if(item.quantity <= 0){
+
+        removeFromCart(id);
+
+        return;
+
+    }
+
+    saveCart();
+
+    location.reload();
+
+}
+
+// ==========================
+
+function clearCart(){
+
+    cart = [];
+
+    saveCart();
+
+    location.reload();
+
+}
+
+// ==========================
+
+function getCartTotal(){
+
+    let total = 0;
+
+    cart.forEach(item=>{
+
+        total += item.price * item.quantity;
+
+    });
+
+    return total;
+
+}
+
+// ==========================
+
+function getCartItems(){
+
+    return cart;
+
+}
+
+// ==========================
+
+updateCartCount();
+updateFavoriteCount();
+// ==========================
+// FAVORITES
+// ==========================
+
+function addToFavorites(id, name, price, image){
+
+    let exists = favorites.find(item => item.id === id);
+
+    if(exists){
+
+        alert("This sneaker is already in your favorites.");
+
+        return;
+
+    }
+
+    favorites.push({
+
+        id: id,
+        name: name,
+        price: Number(price),
+        image: image
+
+    });
+
+    saveFavorites();
+
+    alert(name + " added to favorites!");
+
+}
+
+// ==========================
+
+function removeFavorite(id){
+
+    favorites = favorites.filter(item => item.id !== id);
+
+    saveFavorites();
+
+    location.reload();
+
+}
+
+// ==========================
+
+function getFavorites(){
+
+    return favorites;
+
+}
+
+// ==========================
+// FILTER
+// ==========================
+
+function filterSneakers(){
+
+    let brand = document.getElementById("brand").value;
+
+    let price = document.getElementById("price").value;
+
+    let size = document.getElementById("size").value;
+
+    if(size === ""){
+
+        alert("Please select a size.");
+
+        return;
+
+    }
+
+    document.getElementById("products-grid").style.display = "grid";
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        let brandMatch =
+        brand === "all" ||
+        card.classList.contains(brand);
+
+        let priceMatch = true;
+
+        if(price !== "all"){
+
+            priceMatch =
+            Number(card.dataset.price)
+            <=
+            Number(price);
+
+        }
+
+        card.style.display =
+        brandMatch && priceMatch
+        ? "block"
+        : "none";
+
+    });
+
+}
+
+// ==========================
+// START
+// ==========================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    updateCartCount();
+
+    updateFavoriteCount();
+
+});
