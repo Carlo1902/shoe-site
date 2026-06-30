@@ -155,37 +155,104 @@ All Rights Reserved
 <script>
 
 fetch("sneakers.json")
-  .then(r => r.json())
-  .then(sneakers => {
 
-    const grid = document.getElementById("products-grid");
-    grid.innerHTML = "";
+.then(response => response.json())
 
-    sneakers.forEach(shoe => {
-      grid.innerHTML += `
-        <div class="card ${shoe.brand}" data-price="${shoe.price}">
-          <img src="${shoe.image}" alt="${shoe.name}">
+.then(sneakers => {
 
-          <div class="card-content">
-            <h3>${shoe.name}</h3>
-            <p>€${shoe.price}</p>
+const grid =
+document.getElementById("products-grid");
 
-            <button onclick="addToFavorites(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
-              ❤️ Favorite
-            </button>
+grid.innerHTML = "";
 
-            <a href="product.html?id=${shoe.id}">More</a>
+sneakers.forEach(shoe => {
 
-            <button onclick="addToCart(${shoe.id}, '${shoe.name}', ${shoe.price}, '${shoe.image}')">
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      `;
-    });
+grid.innerHTML += `
 
-    updateCartCount();
-    updateFavoriteCount();
+<div class="card ${shoe.brand}"
+data-price="${shoe.price}">
+
+<img src="${shoe.image}"
+alt="${shoe.name}">
+
+<div class="card-content">
+
+<h3>${shoe.name}</h3>
+
+<p class="price">
+€${shoe.price}
+</p>
+
+<button
+class="fav-btn"
+
+onclick="addToFavorites(
+${shoe.id},
+'${shoe.name}',
+${shoe.price},
+'${shoe.image}'
+)">
+❤️ Favorite
+</button>
+
+<a
+href="product.html?id=${shoe.id}"
+class="buy-btn">
+
+More
+
+</a>
+
+<button
+class="buy-btn"
+
+onclick="addToCart(
+${shoe.id},
+'${shoe.name}',
+${shoe.price},
+'${shoe.image}'
+)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+});
+
+.catch(error => {
+
+console.error(error);
+
+document.getElementById("products-grid").innerHTML = `
+
+<div style="grid-column:1/-1;
+text-align:center;
+padding:60px;">
+
+<h2>
+Unable to load sneakers.
+</h2>
+
+<p>
+Please try again later.
+</p>
+
+</div>
+
+`;
+
+});
+
+updateCartCount();
+
+updateFavoriteCount();
 
   })
   .catch(err => console.error(err));
