@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Shop - Sneaker Shop</title>
-  
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -13,49 +18,33 @@
 
 <header>
 
-<div class="logo">SNEAKER SHOP</div>
+<div class="logo">
+SNEAKER SHOP
+</div>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="favorites.html">❤️ Favorites (<span id="fav-count">0</span>)</a>
-  <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="favorites.html">
+❤️ Favorites
+(<span id="fav-count">0</span>)
+</a>
+
+<a href="cart.html">
+🛒 Cart
+(<span id="cart-count">0</span>)
+</a>
+
 </nav>
 
 </header>
-<div id="favorites"
-style="
-display:none;
-position:fixed;
-top:90px;
-right:20px;
-width:320px;
-background:#1a1a1a;
-padding:20px;
-border-radius:10px;
-z-index:1000;
-">
-
-<h2>Favorites</h2>
-
-<div id="favorite-items"></div>
-
-</div>
-<div id="cart" style="display:none; position:fixed; top:90px; right:20px; width:320px; background:#1a1a1a; padding:20px; border-radius:10px; z-index:1000;">
-
-<h2>Your Cart</h2>
-
-<div id="cart-items"></div>
-
-<hr>
-
-<p>Total: €<span id="cart-total">0</span></p>
-
-<button onclick="clearCart()">Clear Cart</button>
-
-</div>
 
 <section class="hero">
 
@@ -67,57 +56,76 @@ z-index:1000;
 
 <section class="filter-box">
 
-<h2>Find Your Perfect Sneaker</h2>
+<h2>
+Find Your Perfect Sneaker
+</h2>
 
 <select id="brand">
 
-<option value="all">All Brands</option>
+<option value="all">
+All Brands
+</option>
 
-<option value="nike">Nike</option>
+<option value="nike">
+Nike
+</option>
 
-<option value="adidas">Adidas</option>
+<option value="adidas">
+Adidas
+</option>
 
-<option value="puma">Puma</option>
+<option value="puma">
+Puma
+</option>
 
-<option value="newbalance">New Balance</option>
+<option value="newbalance">
+New Balance
+</option>
 
 </select>
 
 <select id="price">
 
-<option value="all">Any Price</option>
+<option value="all">
+Any Price
+</option>
 
-<option value="100">Under €100</option>
+<option value="100">
+Under €100
+</option>
 
-<option value="150">Under €150</option>
+<option value="150">
+Under €150
+</option>
 
-<option value="200">Under €200</option>
+<option value="200">
+Under €200
+</option>
 
-<option value="250">Under €250</option>
+<option value="250">
+Under €250
+</option>
 
-<option value="300">Under €300</option>
+<option value="300">
+Under €300
+</option>
 
 </select>
 
 <select id="size">
 
-<option value="">Choose Size</option>
+<option value="">
+Choose Size
+</option>
 
-<option value="38">38</option>
-
-<option value="39">39</option>
-
-<option value="40">40</option>
-
-<option value="41">41</option>
-
-<option value="42">42</option>
-
-<option value="43">43</option>
-
-<option value="44">44</option>
-
-<option value="45">45</option>
+<option>38</option>
+<option>39</option>
+<option>40</option>
+<option>41</option>
+<option>42</option>
+<option>43</option>
+<option>44</option>
+<option>45</option>
 
 </select>
 
@@ -127,126 +135,86 @@ Show Sneakers
 
 </section>
 
-<div class="grid" id="products-grid">
+<div
+class="grid"
+id="products-grid">
 
 </div>
 
 </div>
 
 <footer>
-© 2026 Sneaker Vault — All Rights Reserved
+
+© 2026 Sneaker Shop —
+All Rights Reserved
+
 </footer>
 
-<script>
-
-let cart = [];
-
-function addToCart(name, price){
-
-cart.push({
-  name:name,
-  price:price
-});
-
-updateCart();
-
-}
-
-function updateCart(){
-
-let cartItems = document.getElementById("cart-items");
-let cartCount = document.getElementById("cart-count");
-let cartTotal = document.getElementById("cart-total");
-
-cartItems.innerHTML = "";
-
-let total = 0;
-
-cart.forEach((item,index)=>{
-
-total += item.price;
-
-cartItems.innerHTML += `
-<div style="margin-bottom:10px;">
-${item.name} - €${item.price}
-<button onclick="removeItem(${index})">X</button>
-</div>
-`;
-
-});
-
-cartCount.textContent = cart.length;
-cartTotal.textContent = total;
-
-}
-
-function removeItem(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-function clearCart(){
-
-cart = [];
-
-updateCart();
-
-}
-
-function toggleCart(){
-
-let cartBox = document.getElementById("cart");
-
-if(cartBox.style.display === "none"){
-cartBox.style.display = "block";
-}else{
-cartBox.style.display = "none";
-}
-
-}
-
-</script>
 <script src="script.js"></script>
 
 <script>
 
 fetch("sneakers.json")
+
 .then(response => response.json())
+
 .then(sneakers => {
 
-let grid =
+const grid =
 document.getElementById("products-grid");
+
+grid.innerHTML = "";
 
 sneakers.forEach(shoe => {
 
 grid.innerHTML += `
 
-<div class="card ${shoe.brand}" data-price="${shoe.price}">
+<div class="card ${shoe.brand}"
+data-price="${shoe.price}">
 
-<img src="${shoe.image}">
+<img src="${shoe.image}"
+alt="${shoe.name}">
 
 <div class="card-content">
 
 <h3>${shoe.name}</h3>
 
-<p class="price">€${shoe.price}</p>
+<p class="price">
+€${shoe.price}
+</p>
 
-<button class="fav-btn"
-onclick="addToFavorites('${shoe.name}')">
+<button
+class="fav-btn"
+
+onclick="addToFavorites(
+${shoe.id},
+'${shoe.name}',
+${shoe.price},
+'${shoe.image}'
+)">
 ❤️ Favorite
 </button>
 
-<a href="product.html?id=${shoe.id}"
+<a
+href="product.html?id=${shoe.id}"
 class="buy-btn">
+
 More
+
 </a>
 
-<button class="buy-btn"
-onclick="addToCart('${shoe.name}',${shoe.price})">
+<button
+class="buy-btn"
+
+onclick="addToCart(
+${shoe.id},
+'${shoe.name}',
+${shoe.price},
+'${shoe.image}'
+)">
+
 Add to Cart
+
 </button>
 
 </div>
@@ -256,10 +224,38 @@ Add to Cart
 `;
 
 });
+});
+
+.catch(error => {
+
+console.error(error);
+
+document.getElementById("products-grid").innerHTML = `
+
+<div style="grid-column:1/-1;
+text-align:center;
+padding:60px;">
+
+<h2>
+Unable to load sneakers.
+</h2>
+
+<p>
+Please try again later.
+</p>
+
+</div>
+
+`;
 
 });
+
+updateCartCount();
+
+updateFavoriteCount();
 
 </script>
 
 </body>
+
 </html>
