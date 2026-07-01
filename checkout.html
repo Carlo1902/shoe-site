@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout - Sneaker Shop</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.checkout-page{
+  max-width:1200px;
+  margin:70px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1.3fr .9fr;
+  gap:35px;
+}
+
+.checkout-title{
+  grid-column:1/-1;
+  font-size:55px;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.checkout-panel,
+.order-panel{
+  background:#f5f5f5;
+  border-radius:25px;
+  padding:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.checkout-panel h2,
+.order-panel h2{
+  font-size:32px;
+  margin-bottom:25px;
+}
+
+.checkout-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  font-weight:700;
+  color:#111;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  background:white;
+  font-size:16px;
+  font-family:inherit;
+}
+
+.form-group textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.payment-options{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.payment-option{
+  background:white;
+  border-radius:14px;
+  padding:16px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:center;
+}
+
+.payment-option input{
+  margin-right:8px;
+}
+
+.place-order-btn{
+  grid-column:1/-1;
+  margin-top:12px;
+  background:#111;
+  color:white;
+  border:none;
+  padding:18px;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.place-order-btn:hover{
+  background:#333;
+  transform:translateY(-2px);
+}
+
+.order-item{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  background:white;
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:15px;
+}
+
+.order-item img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  background:#fafafa;
+  border-radius:12px;
+  padding:8px;
+}
+
+.order-item h3{
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.order-item p{
+  color:#555;
+  font-weight:600;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+  margin:16px 0;
+}
+
+.summary-total{
+  font-size:24px;
+  font-weight:800;
+  padding-top:18px;
+  border-top:1px solid #ddd;
+}
+
+.empty-checkout,
+.order-success{
+  grid-column:1/-1;
+  background:#f5f5f5;
+  border-radius:25px;
+  padding:70px 30px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.empty-checkout h2,
+.order-success h2{
+  font-size:38px;
+  margin-bottom:18px;
+}
+
+.empty-checkout p,
+.order-success p{
+  font-size:18px;
+  color:#555;
+  margin-bottom:28px;
+}
+
+@media(max-width:900px){
+  .checkout-page{
+    grid-template-columns:1fr;
+    margin:40px auto;
+  }
+
+  .checkout-title{
+    font-size:40px;
+  }
+
+  .checkout-form,
+  .payment-options{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SNEAKER SHOP</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="favorites.html">❤️ Favorites (<span id="fav-count">0</span>)</a>
+    <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+</header>
+
+<main class="checkout-page" id="checkout-page">
+
+  <h1 class="checkout-title">Checkout</h1>
+
+  <section class="checkout-panel">
+    <h2>Delivery Details</h2>
+
+    <form class="checkout-form" id="checkout-form">
+
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input id="first-name" type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input id="last-name" type="text" required>
+      </div>
+
+      <div class="form-group full">
+        <label for="email">Email</label>
+        <input id="email" type="email" required>
+      </div>
+
+      <div class="form-group full">
+        <label for="address">Address</label>
+        <input id="address" type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label for="postal-code">Postal Code</label>
+        <input id="postal-code" type="text" required>
+      </div>
+
+      <div class="form-group full">
+        <label for="delivery">Delivery</label>
+        <select id="delivery">
+          <option value="standard">Standard Delivery - Free</option>
+          <option value="express">Express Delivery - €9</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Payment</label>
+
+        <div class="payment-options">
+          <label class="payment-option">
+            <input type="radio" name="payment" checked>
+            iDEAL
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment">
+            Credit Card
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment">
+            PayPal
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label for="notes">Order Notes</label>
+        <textarea id="notes" placeholder="Optional"></textarea>
+      </div>
+
+      <button class="place-order-btn" type="submit">
+        Place Order
+      </button>
+
+    </form>
+  </section>
+
+  <aside class="order-panel">
+    <h2>Order Summary</h2>
+
+    <div id="order-items"></div>
+
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span id="subtotal">€0</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Shipping</span>
+      <span id="shipping">FREE</span>
+    </div>
+
+    <div class="summary-row summary-total">
+      <span>Total</span>
+      <span id="total">€0</span>
+    </div>
+  </aside>
+
+</main>
+
+<footer>
+  © 2026 Sneaker Shop — All Rights Reserved
+</footer>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+const checkoutPage = document.getElementById("checkout-page");
+const orderItems = document.getElementById("order-items");
+const delivery = document.getElementById("delivery");
+const form = document.getElementById("checkout-form");
+
+function updateCounts(){
+  document.getElementById("cart-count").innerText =
+    cart.reduce((total,item) => total + item.quantity, 0);
+
+  document.getElementById("fav-count").innerText =
+    favorites.length;
+}
+
+function getSubtotal(){
+  return cart.reduce((total,item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+}
+
+function renderCheckout(){
+  updateCounts();
+
+  if(cart.length === 0){
+    checkoutPage.innerHTML = `
+      <div class="empty-checkout">
+        <h2>Your cart is empty.</h2>
+        <p>Add sneakers to your cart before checking out.</p>
+        <a class="btn" href="shop.html">Back to Shop</a>
+      </div>
+    `;
+    return;
+  }
+
+  orderItems.innerHTML = "";
+
+  cart.forEach(item => {
+    orderItems.innerHTML += `
+      <div class="order-item">
+        <img src="${item.image}" alt="${item.name}">
+
+        <div>
+          <h3>${item.name}</h3>
+          <p>${item.quantity} x €${item.price}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  updateTotals();
+}
+
+function updateTotals(){
+  const subtotal = getSubtotal();
+  const shipping = delivery.value === "express" ? 9 : 0;
+  const total = subtotal + shipping;
+
+  document.getElementById("subtotal").innerText = "€" + subtotal;
+  document.getElementById("shipping").innerText =
+    shipping === 0 ? "FREE" : "€" + shipping;
+  document.getElementById("total").innerText = "€" + total;
+}
+
+delivery.addEventListener("change", updateTotals);
+
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+
+  localStorage.removeItem("cart");
+  cart = [];
+  updateCounts();
+
+  checkoutPage.innerHTML = `
+    <div class="order-success">
+      <h2>Order placed successfully.</h2>
+      <p>Thank you for shopping at Sneaker Shop.</p>
+      <a class="btn" href="shop.html">Continue Shopping</a>
+    </div>
+  `;
+});
+
+renderCheckout();
+</script>
+
+</body>
+</html>
