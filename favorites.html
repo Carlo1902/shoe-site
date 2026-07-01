@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Favorites - Sneaker Shop</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.favorites-container{
+max-width:1200px;
+margin:60px auto;
+padding:20px;
+}
+
+.favorites-title{
+font-size:55px;
+text-align:center;
+margin-bottom:40px;
+}
+
+.favorite-item{
+display:flex;
+align-items:center;
+gap:30px;
+background:white;
+border-radius:20px;
+padding:25px;
+margin-bottom:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.favorite-item img{
+width:200px;
+height:200px;
+object-fit:contain;
+background:#f5f5f5;
+border-radius:20px;
+padding:15px;
+}
+
+.favorite-info{
+flex:1;
+}
+
+.favorite-info h2{
+font-size:30px;
+color:#111;
+margin-bottom:10px;
+}
+
+.favorite-price{
+font-size:24px;
+font-weight:bold;
+color:#111;
+margin-bottom:20px;
+}
+
+.favorite-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.favorite-buttons button,
+.favorite-buttons a{
+
+padding:14px 24px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+text-decoration:none;
+
+}
+
+.add-cart{
+
+background:#111;
+
+color:white;
+
+}
+
+.remove{
+
+background:white;
+
+border:2px solid #111;
+
+color:#111;
+
+}
+
+.remove:hover{
+
+background:#111;
+
+color:white;
+
+}
+
+.empty{
+
+background:white;
+
+padding:80px;
+
+border-radius:20px;
+
+text-align:center;
+
+font-size:28px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+color:#111;
+
+}
+
+@media(max-width:900px){
+
+.favorite-item{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.favorite-item img{
+
+width:220px;
+
+height:220px;
+
+}
+
+.favorite-buttons{
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+SNEAKER SHOP
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="favorites.html">
+
+❤️ Favorites (<span id="fav-count">0</span>)
+
+</a>
+
+<a href="cart.html">
+
+🛒 Cart (<span id="cart-count">0</span>)
+
+</a>
+
+</nav>
+
+</header>
+
+<div class="favorites-container">
+
+<h1 class="favorites-title">
+
+Your Favorites
+
+</h1>
+
+<div id="favorites-list">
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+let list =
+document.getElementById("favorites-list");
+
+document.getElementById("fav-count").innerText =
+favorites.length;
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+document.getElementById("cart-count").innerText =
+cart.reduce((t,item)=>t+item.quantity,0);
+
+if(favorites.length === 0){
+
+list.innerHTML = `
+
+<div class="empty">
+
+You don't have any favorite sneakers yet.
+
+</div>
+
+`;
+
+}else{
+
+favorites.forEach((shoe,index)=>{
+
+list.innerHTML += `
+
+<div class="favorite-item">
+
+<img src="${shoe.image}">
+
+<div class="favorite-info">
+
+<h2>${shoe.name}</h2>
+
+<div class="favorite-price">
+
+€${shoe.price}
+
+</div>
+
+<div class="favorite-buttons">
+
+<a
+class="add-cart"
+href="product.html?id=${shoe.id}">
+
+More
+
+</a>
+
+<button
+class="add-cart"
+onclick="addFavoriteToCart(${index})">
+
+Add to Cart
+
+</button>
+
+<button
+class="remove"
+onclick="removeFavoriteItem(${index})">
+
+Remove
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function addFavoriteToCart(index){
+
+let shoe = favorites[index];
+
+let existing =
+cart.find(item => item.id === shoe.id);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+
+id: shoe.id,
+
+name: shoe.name,
+
+price: shoe.price,
+
+image: shoe.image,
+
+quantity: 1
+
+});
+
+}
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+location.reload();
+
+}
+
+function removeFavoriteItem(index){
+
+favorites.splice(index,1);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+location.reload();
+
+}
+
+</script>
+
+<footer>
+
+© 2026 Sneaker Shop — All Rights Reserved
+
+</footer>
+
+</body>
+
+</html>
