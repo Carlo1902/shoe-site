@@ -555,3 +555,35 @@ font-size:17px;
 }
 
 }
+
+#toast{
+  position:fixed;
+  top:100px;
+  right:30px;
+  background:#111;
+  color:white;
+  padding:16px 24px;
+  border-radius:12px;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  opacity:0;
+  transform:translateY(-15px);
+  pointer-events:none;
+  transition:.3s;
+  z-index:9999;
+}
+
+#toast.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:768px){
+  #toast{
+    top:auto;
+    right:20px;
+    left:20px;
+    bottom:25px;
+    text-align:center;
+  }
+}
