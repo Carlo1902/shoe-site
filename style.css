@@ -587,3 +587,47 @@ font-size:17px;
     text-align:center;
   }
 }
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:34px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  header{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#111;
+    padding:20px;
+    text-align:center;
+  }
+
+  nav.active{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:18px;
+  }
+}

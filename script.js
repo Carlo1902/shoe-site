@@ -214,3 +214,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
     updateFavoriteCount();
 });
+
+function toggleMenu(){
+    let nav = document.getElementById("nav-menu");
+
+    if(!nav) return;
+
+    nav.classList.toggle("active");
+}
