@@ -171,22 +171,19 @@
 <header>
   <div class="logo">SNEAKER SHOP</div>
 
-  <nav>
+  <button class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </button>
+
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-
-    <a href="favorites.html">
-      Favorites (<span id="fav-count">0</span>)
-    </a>
-
-    <a href="cart.html">
-      Cart (<span id="cart-count">0</span>)
-    </a>
+    <a href="favorites.html">❤️ Favorites (<span id="fav-count">0</span>)</a>
+    <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
   </nav>
 </header>
-
 <div class="cart-container">
 
   <h1 class="cart-title">Shopping Cart</h1>
