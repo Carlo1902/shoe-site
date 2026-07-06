@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Nike Air Max",
+    "name": "Nike Air Max 90",
     "price": 189,
     "brand": "nike",
-    "image": "https://images.unsplash.com/photo-1711491559395-c82f70a68bfb?q=80&w=1170",
+    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2368fb4f-4a58-47f5-8a68-3687d8745692/AIR+MAX+90+PRM.png",
     "description": "The Nike Air Max combines iconic style with all-day comfort. Featuring responsive cushioning and a timeless design, this sneaker is perfect for everyday wear and streetwear enthusiasts."
   },
   {
