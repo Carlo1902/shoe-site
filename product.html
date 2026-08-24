@@ -1,73 +1,635 @@
 <!DOCTYPE html>
+
 <html lang="nl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product</title>
+
+<title>Product - Sneaker Shop</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================
+   PRODUCT PAGE
+========================= */
+
+.product-page{
+  max-width:1400px;
+  margin:60px auto;
+  padding:20px 40px 80px;
+}
+
+.back-shop{
+  display:inline-block;
+  margin-bottom:35px;
+  color:#111;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.product-layout{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  align-items:start;
+}
+
+/* =========================
+   PRODUCT IMAGES
+========================= */
+
+.product-gallery{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.main-image{
+  width:100%;
+  aspect-ratio:1 / 1;
+  background:#f5f5f5;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.main-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:30px;
+}
+
+.thumbnail-list{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.thumbnail{
+  width:90px;
+  height:90px;
+  background:#f5f5f5;
+  border:2px solid transparent;
+  border-radius:10px;
+  padding:8px;
+  cursor:pointer;
+  object-fit:contain;
+}
+
+.thumbnail:hover,
+.thumbnail.active{
+  border-color:#111;
+}
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-brand{
+  text-transform:uppercase;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  color:#666;
+  margin-bottom:10px;
+}
+
+.product-info h1{
+  font-size:48px;
+  line-height:1.1;
+  color:#111;
+  margin-bottom:18px;
+}
+
+.product-price{
+  font-size:25px;
+  font-weight:bold;
+  color:#111;
+  margin-bottom:30px;
+}
+
+.product-description{
+  color:#555;
+  font-size:17px;
+  line-height:1.7;
+  margin-bottom:35px;
+}
+
+/* =========================
+   SIZE
+========================= */
+
+.size-title{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-weight:bold;
+  color:#111;
+}
+
+.size-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.size-btn{
+  background:white;
+  border:1px solid #ccc;
+  padding:15px;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.size-btn:hover{
+  border-color:#111;
+}
+
+.size-btn.selected{
+  background:#111;
+  color:white;
+  border-color:#111;
+}
+
+/* =========================
+   PRODUCT BUTTONS
+========================= */
+
+.product-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.add-cart-product{
+  width:100%;
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:30px;
+  padding:18px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.add-cart-product:hover{
+  opacity:.8;
+}
+
+.add-favorite-product{
+  width:100%;
+  background:white;
+  color:#111;
+  border:1px solid #ccc;
+  border-radius:30px;
+  padding:17px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.add-favorite-product:hover{
+  border-color:#111;
+}
+
+/* =========================
+   EXTRA INFO
+========================= */
+
+.product-benefits{
+  margin-top:35px;
+  padding-top:25px;
+  border-top:1px solid #ddd;
+}
+
+.benefit{
+  padding:12px 0;
+  color:#333;
+  font-size:15px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .product-page{
+    padding:20px 20px 60px;
+    margin:30px auto;
+  }
+
+  .product-layout{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .product-info h1{
+    font-size:36px;
+  }
+
+  .main-image{
+    aspect-ratio:1 / 1;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="product-page">
+<header>
 
-<div class="product-image">
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
 
-<img id="product-image">
+<div class="logo">
+SNEAKER SHOP
+</div>
+
+<nav id="menu">
+
+<div class="close-menu" onclick="toggleMenu()">
+✕
+</div>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="favorites.html">
+❤️ Favorites
+(<span id="fav-count">0</span>)
+</a>
+
+<a href="cart.html">
+🛒 Cart
+(<span id="cart-count">0</span>)
+</a>
+
+</nav>
+
+</header>
+
+<main class="product-page">
+
+<a href="shop.html" class="back-shop">
+← Back to Shop
+</a>
+
+<div class="product-layout">
+
+<!-- PRODUCT GALLERY -->
+
+<div class="product-gallery">
+
+<div class="main-image">
+
+<img
+id="product-image"
+src=""
+alt="Sneaker">
 
 </div>
+
+<div
+class="thumbnail-list"
+id="thumbnail-list">
+
+</div>
+
+</div>
+
+<!-- PRODUCT INFORMATION -->
 
 <div class="product-info">
 
-<h1 id="product-name"></h1>
+<div
+class="product-brand"
+id="product-brand">
 
-<div class="product-price" id="product-price"></div>
+</div>
 
-<div class="product-description"
-id="product-description"></div>
+<h1 id="product-name">
+Loading...
+</h1>
 
-<a href="shop.html" class="back-btn">
-Back To Shop
-</a>
+<div
+class="product-price"
+id="product-price">
+
+</div>
+
+<div
+class="product-description"
+id="product-description">
+
+</div>
+
+<div class="size-title">
+
+<span>Select Size</span>
+
+<span id="selected-size">
+Select a size
+</span>
+
+</div>
+
+<div class="size-grid">
+
+<button class="size-btn" onclick="selectSize(this,'38')">
+38
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'39')">
+39
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'40')">
+40
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'41')">
+41
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'42')">
+42
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'43')">
+43
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'44')">
+44
+</button>
+
+<button class="size-btn" onclick="selectSize(this,'45')">
+45
+</button>
+
+</div>
+
+<div class="product-buttons">
+
+<button
+class="add-cart-product"
+onclick="addCurrentProductToCart()">
+
+Add to Cart
+
+</button>
+
+<button
+class="add-favorite-product"
+onclick="addCurrentProductToFavorites()">
+
+♡ Add to Favorites
+
+</button>
+
+</div>
+
+<div class="product-benefits">
+
+<div class="benefit">
+✓ Free shipping
+</div>
+
+<div class="benefit">
+✓ Easy returns
+</div>
+
+<div class="benefit">
+✓ Secure checkout
+</div>
+
+</div>
 
 </div>
 
 </div>
+
+</main>
+
+<footer>
+
+© 2026 Sneaker Shop — All Rights Reserved
+
+</footer>
+
+<script src="script.js"></script>
 
 <script>
 
-let params =
+let currentShoe = null;
+
+let selectedSize = null;
+
+
+/* =========================
+   GET PRODUCT ID
+========================= */
+
+const params =
 new URLSearchParams(window.location.search);
 
-let id =
+const id =
 Number(params.get("id"));
 
+
+/* =========================
+   LOAD PRODUCT
+========================= */
+
 fetch("sneakers.json")
+
 .then(response => response.json())
+
 .then(sneakers => {
 
-let shoe =
-sneakers.find(s => s.id === id);
+  currentShoe =
+  sneakers.find(shoe => shoe.id === id);
 
-if(!shoe) return;
+  if(!currentShoe){
 
-document.getElementById("product-image").src =
-shoe.image;
+    document.querySelector(".product-layout")
+    .innerHTML = "<h2>Product not found.</h2>";
 
-document.getElementById("product-name").innerText =
-shoe.name;
+    return;
 
-document.getElementById("product-price").innerText =
-"€" + shoe.price;
+  }
 
-document.getElementById("product-description").innerText =
-shoe.description;
+  document.getElementById("product-name")
+  .innerText = currentShoe.name;
+
+  document.getElementById("product-price")
+  .innerText = "€" + currentShoe.price;
+
+  document.getElementById("product-description")
+  .innerText = currentShoe.description;
+
+  document.getElementById("product-brand")
+  .innerText = currentShoe.brand;
+
+
+  /* =========================
+     IMAGES
+  ========================= */
+
+  let images =
+  currentShoe.images ||
+  [currentShoe.image];
+
+  document.getElementById("product-image")
+  .src = images[0];
+
+  document.getElementById("product-image")
+  .alt = currentShoe.name;
+
+  const thumbnailList =
+  document.getElementById("thumbnail-list");
+
+  images.forEach((image,index) => {
+
+    const thumbnail =
+    document.createElement("img");
+
+    thumbnail.src = image;
+
+    thumbnail.className = "thumbnail";
+
+    if(index === 0){
+
+      thumbnail.classList.add("active");
+
+    }
+
+    thumbnail.onclick = function(){
+
+      document.getElementById("product-image")
+      .src = image;
+
+      document
+      .querySelectorAll(".thumbnail")
+      .forEach(item => {
+
+        item.classList.remove("active");
+
+      });
+
+      thumbnail.classList.add("active");
+
+    };
+
+    thumbnailList.appendChild(thumbnail);
+
+  });
+
+})
+
+.catch(error => {
+
+  console.error(error);
+
+  document.querySelector(".product-layout")
+  .innerHTML = `
+  <h2>Unable to load this product.</h2>
+  `;
 
 });
+
+
+/* =========================
+   SELECT SIZE
+========================= */
+
+function selectSize(button,size){
+
+  document
+  .querySelectorAll(".size-btn")
+  .forEach(btn => {
+
+    btn.classList.remove("selected");
+
+  });
+
+  button.classList.add("selected");
+
+  selectedSize = size;
+
+  document.getElementById("selected-size")
+  .innerText = "Size " + size;
+
+}
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addCurrentProductToCart(){
+
+  if(!currentShoe) return;
+
+  if(!selectedSize){
+
+    alert("Please select a size.");
+
+    return;
+
+  }
+
+  addToCart(
+    currentShoe.id + "-" + selectedSize,
+    currentShoe.name + " - Size " + selectedSize,
+    currentShoe.price,
+    currentShoe.image
+  );
+
+}
+
+
+/* =========================
+   ADD TO FAVORITES
+========================= */
+
+function addCurrentProductToFavorites(){
+
+  if(!currentShoe) return;
+
+  addToFavorites(
+    currentShoe.id,
+    currentShoe.name,
+    currentShoe.price,
+    currentShoe.image
+  );
+
+}
 
 </script>
 
 </body>
+
 </html>
