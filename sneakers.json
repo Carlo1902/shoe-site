@@ -5,6 +5,9 @@
     "price": 189,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2368fb4f-4a58-47f5-8a68-3687d8745692/AIR+MAX+90+PRM.png",
+    "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2368fb4f-4a58-47f5-8a68-3687d8745692/AIR+MAX+90+PRM.png"
+    ],
     "description": "The Nike Air Max combines iconic style with all-day comfort. Featuring responsive cushioning and a timeless design, this sneaker is perfect for everyday wear and streetwear enthusiasts."
   },
   {
@@ -13,6 +16,9 @@
     "price": 150,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png",
+    "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png"
+    ],
     "description": "A true classic that never goes out of style. The Nike Air Force 1 delivers premium comfort, durable construction and a legendary silhouette."
   },
   {
@@ -21,6 +27,9 @@
     "price": 240,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/31234c67-736e-41ec-91f7-70ae8d82d3e0/AIR+JORDAN+1+MID.png",
+    "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/31234c67-736e-41ec-91f7-70ae8d82d3e0/AIR+JORDAN+1+MID.png"
+    ],
     "description": "Inspired by basketball heritage, the Jordan Retro offers premium materials, iconic design details and unmatched style."
   },
   {
@@ -29,6 +38,9 @@
     "price": 170,
     "brand": "adidas",
     "image": "https://images.unsplash.com/photo-1691067951700-138ca8f4841f?q=80&w=687",
+    "images": [
+      "https://images.unsplash.com/photo-1691067951700-138ca8f4841f?q=80&w=687"
+    ],
     "description": "Designed for performance and comfort, the Adidas Ultraboost features responsive cushioning and a sleek modern look."
   },
   {
@@ -37,6 +49,9 @@
     "price": 320,
     "brand": "adidas",
     "image": "https://images.unsplash.com/photo-1612723683658-89814a429607?q=80&w=764",
+    "images": [
+      "https://images.unsplash.com/photo-1612723683658-89814a429607?q=80&w=764"
+    ],
     "description": "The Yeezy Boost blends innovative design with premium comfort, making it one of the most sought-after sneakers worldwide."
   },
   {
@@ -45,6 +60,9 @@
     "price": 140,
     "brand": "puma",
     "image": "https://images.unsplash.com/photo-1715695163797-bf164a63aaed?q=80&w=1176",
+    "images": [
+      "https://images.unsplash.com/photo-1715695163797-bf164a63aaed?q=80&w=1176"
+    ],
     "description": "Bold, chunky and stylish. The Puma RS-X brings retro-inspired aesthetics together with modern comfort."
   },
   {
@@ -53,6 +71,9 @@
     "price": 160,
     "brand": "newbalance",
     "image": "https://images.unsplash.com/photo-1665517464780-ab4f42d8af95?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1665517464780-ab4f42d8af95?w=500"
+    ],
     "description": "The New Balance 550 combines vintage basketball style with modern craftsmanship and everyday comfort."
   },
   {
@@ -61,6 +82,9 @@
     "price": 120,
     "brand": "nike",
     "image": "https://i.pinimg.com/originals/a0/25/2d/a0252d838f65e5ce6c1923b61e9e1f41.jpg",
+    "images": [
+      "https://i.pinimg.com/originals/a0/25/2d/a0252d838f65e5ce6c1923b61e9e1f41.jpg"
+    ],
     "description": "A streetwear favorite with timeless appeal. The Nike Dunk Low offers versatility, comfort and classic styling."
   },
   {
@@ -69,6 +93,9 @@
     "price": 140,
     "brand": "adidas",
     "image": "https://www.keepitsneaker.com/cdn/shop/files/adidasOriginalsCampus00sBlack-b..jpg?v=1686072216&width=1445",
+    "images": [
+      "https://www.keepitsneaker.com/cdn/shop/files/adidasOriginalsCampus00sBlack-b..jpg?v=1686072216&width=1445"
+    ],
     "description": "Clean, simple and iconic. The Adidas Campus remains one of the most beloved sneakers in the Adidas lineup."
   },
   {
@@ -77,6 +104,9 @@
     "price": 110,
     "brand": "adidas",
     "image": "https://www.courir.nl/dw/image/v2/BCCL_PRD/on/demandware.static/-/Sites-master-catalog-courir/default/dw311d6922/images/hi-res/001603448_102.jpg?sw=1000&sh=1000&sm=fit",
+    "images": [
+      "https://www.courir.nl/dw/image/v2/BCCL_PRD/on/demandware.static/-/Sites-master-catalog-courir/default/dw311d6922/images/hi-res/001603448_102.jpg?sw=1000&sh=1000&sm=fit"
+    ],
     "description": "The Adidas Spezial combines classic terrace culture with modern comfort. Premium materials and timeless design make it a must-have for every sneaker collection."
   },
   {
@@ -85,6 +115,9 @@
     "price": 80,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ae60ccb7-4574-4bc5-9122-f5600b30f6cb/court-vision-low-next-nature-womens-shoes-ZkMMBG.png",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ae60ccb7-4574-4bc5-9122-f5600b30f6cb/court-vision-low-next-nature-womens-shoes-ZkMMBG.png"
+    ],
     "description": "Inspired by classic basketball sneakers, the Nike Court Vision Low delivers timeless style and everyday comfort."
   },
   {
@@ -93,6 +126,9 @@
     "price": 130,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0908c5e6-781b-4040-83a8-58af6c650aa7/AIR+JORDAN+1+LOW.png",
+    "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0908c5e6-781b-4040-83a8-58af6c650aa7/AIR+JORDAN+1+LOW.png"
+    ],
     "description": "The Air Jordan 1 Low offers legendary Jordan style in a low-profile silhouette with premium comfort and iconic details."
   },
   {
@@ -101,6 +137,9 @@
     "price": 120,
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png",
+    "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png"
+    ],
     "description": "Featuring Nike's iconic Air cushioning, the Air Max 270 delivers exceptional comfort and modern streetwear style."
   }
 ]
