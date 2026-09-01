@@ -2,6 +2,8 @@
 GLOBAL
 ========================= */
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&display=swap');
+
 *{
 margin:0;
 padding:0;
@@ -17,7 +19,7 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Segoe UI',sans-serif;
+font-family:  'M PLUS U' , 'Segoe UI',sans-serif;
 background:var(--white);
 color:var(--dark);
 line-height:1.6;
