@@ -136,10 +136,13 @@
     "name": "Nike Air Max 270",
     "price": 120,
     "brand": "nike",
-    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png",
+    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/skwgyqrbfzhu6uyeh0gg/AIR+MAX+270.png",
     "images": [
-      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png"
-    ],
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/hjpjwaqga3rjulrc91sd/AIR+MAX+270.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/njyetqigdbjwfgul5ssx/AIR+MAX+270.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/teknzwtqlkelexo5okx0/AIR+MAX+270.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a0333dab-9888-4ddc-9e30-fce4ec2c90f7/AIR+MAX+270.png"
+     ],
     "description": "Featuring Nike's iconic Air cushioning, the Air Max 270 delivers exceptional comfort and modern streetwear style."
   }
 ]
