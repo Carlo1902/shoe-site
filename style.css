@@ -308,8 +308,12 @@ box-shadow:0 10px 30px rgba(0,0,0,0.08);
 CONTACT PAGE
 ========================= */
 
+/* =========================
+CONTACT PAGE
+========================= */
+
 .contact-container{
-max-width:900px;
+max-width:1100px;
 margin:80px auto;
 padding:50px;
 background:#f5f5f5;
@@ -331,37 +335,56 @@ font-size:18px;
 
 .contact-form{
 display:flex;
-flex-direction:column;
-gap:20px;
+align-items:center;
+justify-content:center;
+gap:12px;
 }
 
 .contact-form input,
 .contact-form textarea{
-padding:18px;
-border:1px solid #ddd;
-border-radius:12px;
+width:220px;
+height:52px;
+padding:0 18px;
+border:1px solid #d8dce3;
+border-radius:16px;
 background:white;
 font-size:16px;
+font-family:inherit;
+outline:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.2s ease;
 }
 
 .contact-form textarea{
-min-height:180px;
+padding:14px 18px;
 resize:none;
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#111;
+box-shadow:0 5px 18px rgba(0,0,0,0.10);
+}
+
 .contact-form button{
+height:52px;
+padding:0 28px;
 background:#111;
 color:white;
 border:none;
-padding:18px;
-border-radius:12px;
-font-size:18px;
-font-weight:bold;
+border-radius:16px;
+font-size:16px;
+font-family:inherit;
+font-weight:700;
 cursor:pointer;
 transition:0.3s;
 }
 
-.contact-form button:hover
+.contact-form button:hover{
+background:#333;
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
 
 /* =========================
 PRODUCT PAGE
@@ -440,13 +463,25 @@ background:#bbb;
 border-radius:10px;
 }
 
-::-webkit-scrollbar-thumb:hover
+::-webkit-scrollbar-thumb:hover{
+background:#999;
+}
 
 /* =========================
 MOBILE
 ========================= */
 
 @media(max-width:900px){
+
+  .contact-form{
+flex-direction:column;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button{
+width:100%;
+}
 
 .grid{
 grid-template-columns:repeat(2,1fr);
