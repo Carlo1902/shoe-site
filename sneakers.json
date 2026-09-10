@@ -59,9 +59,12 @@
     "name": "Puma RS-X",
     "price": 140,
     "brand": "puma",
-    "image": "https://images.unsplash.com/photo-1715695163797-bf164a63aaed?q=80&w=1176",
+    "image": "https://img.joomcdn.net/c66bf5d559ff9171459cd3188eeba551eef81880_1024_655.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1715695163797-bf164a63aaed?q=80&w=1176"
+      "https://img.joomcdn.net/c66bf5d559ff9171459cd3188eeba551eef81880_1024_655.jpeg", 
+      "https://img.joomcdn.net/c24432a8aa09798db729deb2c858e71d1455e070_1024_655.jpeg", 
+      "https://img.joomcdn.net/df14be9e5e3391f30b2aa20aa7ef8c4a1879f996_original.jpeg", 
+      "https://img.joomcdn.net/383a6408f2c258f9052479462a5c3dc3103c153a_original.jpeg"
     ],
     "description": "Bold, chunky and stylish. The Puma RS-X brings retro-inspired aesthetics together with modern comfort."
   },
@@ -70,9 +73,11 @@
     "name": "New Balance 550",
     "price": 160,
     "brand": "newbalance",
-    "image": "https://images.unsplash.com/photo-1665517464780-ab4f42d8af95?w=500",
+    "image": "https://nb.scene7.com/is/image/NB/bb550pb1_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440",
     "images": [
-      "https://images.unsplash.com/photo-1665517464780-ab4f42d8af95?w=500"
+      "https://nb.scene7.com/is/image/NB/bb550pb1_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440", 
+      "https://nb.scene7.com/is/image/NB/bb550pb1_nb_04_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440",
+      "https://nb.scene7.com/is/image/NB/bb550pb1_nb_06_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440"
     ],
     "description": "The New Balance 550 combines vintage basketball style with modern craftsmanship and everyday comfort."
   },
@@ -81,9 +86,13 @@
     "name": "Nike Dunk Low",
     "price": 120,
     "brand": "nike",
-    "image": "https://i.pinimg.com/originals/a0/25/2d/a0252d838f65e5ce6c1923b61e9e1f41.jpg",
+    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/623b57f0-3edf-42e1-b23f-9e0711f2023c/NIKE+DUNK+LOW+RETRO.png",
     "images": [
-      "https://i.pinimg.com/originals/a0/25/2d/a0252d838f65e5ce6c1923b61e9e1f41.jpg"
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/623b57f0-3edf-42e1-b23f-9e0711f2023c/NIKE+DUNK+LOW+RETRO.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f2358e67-bbbd-48ac-9c61-4319f8c2db01/NIKE+DUNK+LOW+RETRO.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d96c7fef-9dd4-435c-ba7f-c3969ec69057/NIKE+DUNK+LOW+RETRO.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ba82b14-3e31-4d94-bee0-eae8fdd6f3a8/NIKE+DUNK+LOW+RETRO.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/59f3d18f-887e-44da-9918-06ff7f0da6fa/NIKE+DUNK+LOW+RETRO.png"
     ],
     "description": "A streetwear favorite with timeless appeal. The Nike Dunk Low offers versatility, comfort and classic styling."
   },
@@ -114,9 +123,13 @@
     "name": "Nike Court Vision Low",
     "price": 80,
     "brand": "nike",
-    "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ae60ccb7-4574-4bc5-9122-f5600b30f6cb/court-vision-low-next-nature-womens-shoes-ZkMMBG.png",
+    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d4776188-7104-419e-a1c8-f055737b9e6e/NIKE+COURT+VISION+LO+NN.png",
     "images": [
-      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ae60ccb7-4574-4bc5-9122-f5600b30f6cb/court-vision-low-next-nature-womens-shoes-ZkMMBG.png"
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d4776188-7104-419e-a1c8-f055737b9e6e/NIKE+COURT+VISION+LO+NN.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/185b5420-6911-4b04-a9fa-8a7b8eba3c7f/NIKE+COURT+VISION+LO+NN.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a0aae2ee-c89e-4eb2-a1b2-3644e6a10828/NIKE+COURT+VISION+LO+NN.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e9776563-0cf2-432e-94e2-eb5159dd4a57/NIKE+COURT+VISION+LO+NN.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/45d051f4-a94b-4c36-a508-3bf36aff863e/NIKE+COURT+VISION+LO+NN.png"
     ],
     "description": "Inspired by classic basketball sneakers, the Nike Court Vision Low delivers timeless style and everyday comfort."
   },
@@ -125,9 +138,13 @@
     "name": "Nike Air Jordan 1 Low",
     "price": 130,
     "brand": "nike",
-    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0908c5e6-781b-4040-83a8-58af6c650aa7/AIR+JORDAN+1+LOW.png",
+    "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ee40c439-e6c0-46d3-932d-c8c3d5501cb1/AIR+JORDAN+1+LOW.png",
     "images": [
-      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0908c5e6-781b-4040-83a8-58af6c650aa7/AIR+JORDAN+1+LOW.png"
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ee40c439-e6c0-46d3-932d-c8c3d5501cb1/AIR+JORDAN+1+LOW.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e1c02867-8fb4-4494-ad94-a46ab891b4c7/AIR+JORDAN+1+LOW.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3ef3cadc-938a-4f62-8d8c-b901c905d397/AIR+JORDAN+1+LOW.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d8c340a1-1c03-43b8-be3f-0e955e24a382/AIR+JORDAN+1+LOW.png", 
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/089d9242-1e38-4c7c-988d-2e2d1392735c/AIR+JORDAN+1+LOW.png"
     ],
     "description": "The Air Jordan 1 Low offers legendary Jordan style in a low-profile silhouette with premium comfort and iconic details."
   },
@@ -138,6 +155,7 @@
     "brand": "nike",
     "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/skwgyqrbfzhu6uyeh0gg/AIR+MAX+270.png",
     "images": [
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/skwgyqrbfzhu6uyeh0gg/AIR+MAX+270.png",
       "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/hjpjwaqga3rjulrc91sd/AIR+MAX+270.png",
       "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/njyetqigdbjwfgul5ssx/AIR+MAX+270.png",
       "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/teknzwtqlkelexo5okx0/AIR+MAX+270.png",
